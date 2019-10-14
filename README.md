@@ -1,1 +1,0 @@
-# pareot.github.io
