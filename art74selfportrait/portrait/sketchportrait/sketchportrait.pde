@@ -15,9 +15,9 @@ function setup() {
     rect(150,450,300,300,40,40,0,0); //torso shirt
  
     noStroke(); //right eye
-    fill("black");
+    fill("white");
     ellipse(350,290,50,50);
-    fill("yellow"); //right pupil
+    fill("orange"); //right pupil
     ellipse(350,285,20,20);
     fill("black"); //right iris
     ellipse(350,285,10,10);
@@ -26,9 +26,9 @@ function setup() {
     arc(350,290,50,50,PI+QUARTER_PI,HALF_PI+QUARTER_PI); 
     
     noStroke(); //left eye
-    fill("black");
+    fill("white");
     ellipse(250, 290, 50, 50);
-    fill("yellow"); //left pupil
+    fill("orange"); //left pupil
     ellipse(250,285,20,20);
     fill("black"); //left iris
     ellipse(250,285,10,10);
@@ -37,7 +37,7 @@ function setup() {
     arc(250,290,50,50,0+QUARTER_PI,0-QUARTER_PI); 
     
     noStroke();
-    fill("brown");
+    fill("black");
     //arc(363,209,100,100,PI+QUARTER_PI,0+QUARTER_PI); //right bang
     triangle(333,173, 193,259, 195,170); //left bang 1
     triangle(339,173, 283,175, 255,259); //left bang 2
