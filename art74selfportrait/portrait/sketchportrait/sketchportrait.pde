@@ -5,11 +5,11 @@ function setup() {
 }
   function draw() {
     background("silver");      //bg
-    noStroke(); //setup for face                 
+    stroke("black"); //setup for face                 
     fill("beige");
     rect(200,175,200,250,35,35,25,25); //face
     //ellipse(300,300,200,250);
-    rect(263,400,70,90); //neck
+    rect(263,425,70,25); //neck
     stroke("black");
     fill("green");
     rect(150,450,300,300,40,40,0,0); //torso shirt
@@ -52,6 +52,8 @@ function setup() {
     fill("green");
     triangle(263,452,253,500,300,500); //left collar
     triangle(333,452,343,500,300,500); //right collar
+    line(295,500,295,600); //left button line
+    line(305,500,305,600); //right button line
   
     stroke("black");
     noFill();
