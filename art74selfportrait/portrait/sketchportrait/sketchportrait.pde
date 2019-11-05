@@ -35,7 +35,7 @@ function setup() {
     noStroke();
     fill("black");
     arc(363,209,100,100,PI+QUARTER_PI,0+QUARTER_PI); //right bang
-    triangle(363,209, 463,209, 285,209);
+    triangle(333,175, 193,259, 195,170); //left bang
     
     //noStroke(); //beanie
     //fill("green");
