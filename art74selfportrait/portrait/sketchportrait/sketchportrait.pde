@@ -64,8 +64,8 @@ function setup() {
     quad(285,490, 305,490, 305,600, 295,600); //inner shirt lower
     stroke("black");
     fill("orange");
-    triangle(253,453,253,500,288,500); //left collar
-    triangle(333,452,343,500,300,500); //right collar
+    triangle(253,453,253,500,285,500); //left collar
+    triangle(336,452,343,500,306,500); //right collar
     line(285,500,295,600); //left button line
     line(305,500,305,600); //right button line
   
