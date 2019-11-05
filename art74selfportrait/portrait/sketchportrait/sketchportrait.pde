@@ -11,7 +11,7 @@ function setup() {
     //ellipse(300,300,200,250);
     rect(263,425,70,25); //neck
     stroke("black");
-    fill("green");
+    fill("orange");
     rect(150,450,300,300,40,40,0,0); //torso shirt
  
     noStroke(); //right eye
@@ -37,12 +37,12 @@ function setup() {
     arc(250,290,50,50,0+QUARTER_PI,0-QUARTER_PI); 
     
     noStroke();
-    fill("black");
+    fill("brown");
     //arc(363,209,100,100,PI+QUARTER_PI,0+QUARTER_PI); //right bang
-    triangle(333,175, 193,259, 195,170); //left bang 1
-    triangle(333,175, 283,175, 255,259); //left bang 2
+    triangle(333,173, 193,259, 195,170); //left bang 1
+    triangle(339,173, 283,175, 255,259); //left bang 2
     
-    triangle(333,175, 415,259, 393,155); //right bang 1
+    triangle(333,173, 415,259, 393,155); //right bang 1
     
     
     //noStroke(); //beanie
@@ -59,11 +59,11 @@ function setup() {
     //rect(200,205,200,5); //stripe
     
     noStroke();
-    fill("orange");
+    fill("silver");
     rect(253,452,80,46,0,0,40,40); //inner shirt
-    quad(288,490, 305,490, 305,600, 295,600); //inner shirt lower
+    quad(285,490, 305,490, 305,600, 295,600); //inner shirt lower
     stroke("black");
-    fill("green");
+    fill("orange");
     triangle(253,453,253,500,288,500); //left collar
     triangle(333,452,343,500,300,500); //right collar
     line(285,500,295,600); //left button line
