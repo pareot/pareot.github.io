@@ -21,7 +21,7 @@ function setup() {
     ellipse(350,285,10,10);
     stroke("black");
     noFill();
-    arc(350,290,50,50,PI+QUARTER_PI,HALF_PI+QUARTER_PI); //eye lash
+    arc(350,290,50,50,PI+QUARTER_PI,HALF_PI+QUARTER_PI); //right eye lash
     
     noStroke(); //left eye
     fill("white");
@@ -30,11 +30,11 @@ function setup() {
     ellipse(250,285,10,10);
     stroke("black");
     noFill();
-    arc(250,290,50,50,0+QUARTER_PI,0-QUARTER_PI);
+    arc(250,290,50,50,0+QUARTER_PI,0-QUARTER_PI); //left eye lash
     
     noStroke();
     fill("black");
-    arc(363,209,100,100,PI+QUARTER_PI,0+QUARTER_PI);
+    arc(363,209,100,100,PI+QUARTER_PI,0+QUARTER_PI); //right hair
     fill("black");
     triangle(363,209,285,209,463,209);
     //noStroke(); //beanie
@@ -52,12 +52,13 @@ function setup() {
     
     noStroke();
     fill("orange");
-    rect(263,452,70,46,0,0,40,40); //inner shirt
+    rect(253,452,80,46,0,0,40,40); //inner shirt
+    quad(288,500, 300,500, 295,600, 305,600);
     stroke("black");
     fill("green");
-    triangle(263,452,253,500,300,500); //left collar
+    triangle(253,453,253,500,288,500); //left collar
     triangle(333,452,343,500,300,500); //right collar
-    line(295,500,295,600); //left button line
+    line(285,500,295,600); //left button line
     line(305,500,305,600); //right button line
   
     stroke("black");
