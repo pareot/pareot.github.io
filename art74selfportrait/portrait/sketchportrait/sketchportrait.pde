@@ -39,8 +39,10 @@ function setup() {
     noStroke();
     fill("black");
     //arc(363,209,100,100,PI+QUARTER_PI,0+QUARTER_PI); //right bang
-    triangle(333,173, 193,259, 195,170); //left bang 1
-    triangle(339,173, 283,175, 255,259); //left bang 2
+    triangle(339,173, 283,145, 235,259); //left bang 1
+    triangle(333,175, 193,259, 225,160); //left bang 2
+    triangle(333,175, 195,250, 195,175); //left bang 3
+    
     
     triangle(333,173, 415,259, 393,155); //right bang 1
     
