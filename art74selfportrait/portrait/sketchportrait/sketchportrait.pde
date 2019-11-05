@@ -53,7 +53,7 @@ function setup() {
     noStroke();
     fill("orange");
     rect(253,452,80,46,0,0,40,40); //inner shirt
-    quad(288,500, 300,500, 295,600, 305,600);
+    quad(288,490, 305,490, 305,600, 295,600); //inner shirt lower
     stroke("black");
     fill("green");
     triangle(253,453,253,500,288,500); //left collar
