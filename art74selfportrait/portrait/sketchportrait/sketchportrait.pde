@@ -35,7 +35,8 @@ function setup() {
     noStroke();
     fill("black");
     arc(363,209,100,100,PI+QUARTER_PI,0+QUARTER_PI);
-    triangle();
+    fill("black");
+    triangle(363,209,285,209,463,209);
     //noStroke(); //beanie
     //fill("green");
     //rect(200,175,200,100,35,35,0,0);
