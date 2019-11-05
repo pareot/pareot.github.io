@@ -15,22 +15,26 @@ function setup() {
     rect(150,450,300,300,40,40,0,0); //torso shirt
  
     noStroke(); //right eye
-    fill("white");
+    fill("black");
     ellipse(350,290,50,50);
-    fill("black"); //right pupil
+    fill("yellow"); //right pupil
+    ellipse(350,285,20,20);
+    fill("yellow"); //right iris
     ellipse(350,285,10,10);
-    stroke("black");
+    stroke("black"); //right eye lash
     noFill();
-    arc(350,290,50,50,PI+QUARTER_PI,HALF_PI+QUARTER_PI); //right eye lash
+    arc(350,290,50,50,PI+QUARTER_PI,HALF_PI+QUARTER_PI); 
     
     noStroke(); //left eye
-    fill("white");
+    fill("black");
     ellipse(250, 290, 50, 50);
-    fill("black"); //left pupil
+    fill("yellow"); //left pupil
+    ellipse(250,285,20,20);
+    fill("black"); //left iris
     ellipse(250,285,10,10);
-    stroke("black");
+    stroke("black"); //left eye lash
     noFill();
-    arc(250,290,50,50,0+QUARTER_PI,0-QUARTER_PI); //left eye lash
+    arc(250,290,50,50,0+QUARTER_PI,0-QUARTER_PI); 
     
     noStroke();
     fill("black");
