@@ -32,18 +32,22 @@ function setup() {
     noFill();
     arc(250,290,50,50,0+QUARTER_PI,0-QUARTER_PI);
     
-    noStroke(); //beanie
-    fill("green");
-    rect(200,175,200,100,35,35,0,0);
+    noStroke();
     fill("black");
-    rect(200,275,200,5); //stripe
-    rect(200,265,200,5); //stripe
-    rect(200,255,200,5); //stripe
-    rect(200,245,200,5); //stripe
-    rect(200,235,200,5); //stripe
-    rect(200,225,200,5); //stripe
-    rect(200,215,200,5); //stripe
-    rect(200,205,200,5); //stripe
+    arc(363,209,100,100,PI+QUARTER_PI,0+QUARTER_PI);
+    triangle();
+    //noStroke(); //beanie
+    //fill("green");
+    //rect(200,175,200,100,35,35,0,0);
+    //fill("black");
+    //rect(200,275,200,5); //stripe
+    //rect(200,265,200,5); //stripe
+    //rect(200,255,200,5); //stripe
+    //rect(200,245,200,5); //stripe
+    //rect(200,235,200,5); //stripe
+    //rect(200,225,200,5); //stripe
+    //rect(200,215,200,5); //stripe
+    //rect(200,205,200,5); //stripe
     
     noStroke();
     fill("orange");
