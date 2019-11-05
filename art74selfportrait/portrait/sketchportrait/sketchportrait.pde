@@ -19,7 +19,7 @@ function setup() {
     ellipse(350,290,50,50);
     fill("yellow"); //right pupil
     ellipse(350,285,20,20);
-    fill("yellow"); //right iris
+    fill("black"); //right iris
     ellipse(350,285,10,10);
     stroke("black"); //right eye lash
     noFill();
