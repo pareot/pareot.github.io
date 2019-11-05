@@ -4,7 +4,7 @@ function setup() {
   
 }
   function draw() {
-    background("white");      //bg
+    background("pink");      //bg
     stroke("black"); //setup for face                 
     fill("beige");
     rect(200,175,200,250,35,35,25,25); //face
