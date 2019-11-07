@@ -61,7 +61,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   } else if (toolChoice == '7') {
 
     fill(100, 200, 100);
-    loadImage(img, mouseX, mouseY, 20, 20);
+    image(img, mouseX, mouseY, 20, 20);
   } else if (toolChoice == '8') {
 
     fill(300, 100, 0, 80);
