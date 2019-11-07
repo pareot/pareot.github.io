@@ -1,5 +1,5 @@
 var img;
-var initials ='jm'; // your initials
+var initials ='phle'; // your initials
 var choice = '1'; // starting choice, so it is not empty
 var screenbg = 250; // off white background
 var lastscreenshot=1; // last screenshot never taken
@@ -8,7 +8,7 @@ function preload() {
 // preload() runs once, it may make you wait
 //  img = loadImage('cat.jpg');  // cat.jpg needs to be next to this .js file
 // you can link to an image on your github account
-  img = loadImage('https://dma-git.github.io/images/cat2-sm.jpg');
+  img = loadImage('avatar_pareot.png');
 }
 
 function setup() {
@@ -29,14 +29,14 @@ function draw() {
 
 function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   // the key mapping if statements that you can change to do anything you want.
-  // just make sure each key option has the a stroke or fill and then what type of 
+  // just make sure each key option has the a stroke or fill and then what type of
   // graphic function
 
  if (toolChoice == '1' ) {  // first tool
-   
+
     stroke(01);
     line(mouseX, mouseY, pmouseX, pmouseY);
-    
+
   } else if (toolChoice == '2') { // second tool
 
     stroke(20);
@@ -61,7 +61,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   } else if (toolChoice == '7') {
 
     fill(100, 200, 100);
-    rect(mouseX, mouseY, 20, 20);
+    loadImage(img, mouseX, mouseY, 20, 20);
   } else if (toolChoice == '8') {
 
     fill(300, 100, 0, 80);
@@ -76,10 +76,10 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     rect(mouseX, mouseY, 200, 150);
   } else if (toolChoice == 'g' || toolChoice == 'G') { // g places the image we pre-loaded
     image(img, mouseX, mouseY);
-    
+
   }
  }
- 
+
 function testbox() {
 // this is a test function that will show you how you can put your own functions into the sketch
   x = mouseX;
@@ -110,5 +110,5 @@ function saveme(){
     saveCanvas(filename, 'jpg');
   }
   lastscreenshot=second(); // set this to the current second so no more than one per second
-  
+
 }
