@@ -12,7 +12,8 @@ function draw() {
 }
 
 function keyPressed() {
-  save("screenshot" + saveCount + ".png");
-  saveCount++;
+  if (key == 'x') {
+    save("screenshot" + saveCount + ".png");
+    saveCount++;
   }
 }
