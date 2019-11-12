@@ -1,11 +1,20 @@
 //introduction to the game--hook player with aesthetic (retro)
+saveCount = 0;
+
 function setup() {
-	createCanvas(600,600);
-	fill("white");
-	noStroke();
-	
+  createCanvas(windowWidth, windowHeight);
+  background("black");
 }
 
 function draw() {
-	ellipse(mouseX,mouseY,25,25);
+  fill("gray");
+  noStroke();
+  ellipse(mouseX, mouseY, 30, 30);
+}
+
+function keyPressed() {
+  if (key == 'n') {
+    save("screenshot" + saveCount + ".jpg");
+    saveCount++;
+  }
 }
