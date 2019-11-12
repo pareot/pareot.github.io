@@ -1,10 +1,14 @@
+//show video convincing people to press N
+saveCount = 0;
+
 function setup() {
-  createCanvas(480,120);
-  fill(0,102);
-  noStroke();
-  
+  createCanvas(windowWidth, windowHeight);
+  background("black");
 }
-  function draw() {
-    ellipse(mouseX,mouseY,15,15);
+
+function keyPressed() {
+  if (key == 'N') {
+    save("screenshot" + saveCount + ".jpg");
+    saveCount++;
   }
-  
+}
