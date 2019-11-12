@@ -1,6 +1,8 @@
 saveCount = 0;
 function keyPressed() {
-  save("screenshot" + saveCount + ".png");
-  saveCount++;
+  if(keyIsPressed) {
+    save("screenshot" + saveCount + ".png");
+    print("Hah! I got your info now");
+    saveCount++;
   }
 }
