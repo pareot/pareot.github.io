@@ -1,7 +1,7 @@
 var img;
 var initials ='phle'; // your initials
 var choice = '1'; // starting choice, so it is not empty
-var screenbg = 250; // off white background
+var screenbg = 255; // off white background
 var lastscreenshot=1; // last screenshot never taken
 
 function preload() {
