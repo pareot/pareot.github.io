@@ -50,6 +50,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     stroke(0, 0, 255);
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (key == '5') { // this tool calls a function
+
     stroke(0, 0, 255);
     testbox();
     // make testbox do something!
