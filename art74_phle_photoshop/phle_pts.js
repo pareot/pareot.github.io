@@ -1,7 +1,7 @@
 var img;
 var initials ='phle'; // your initials
 var choice = '1'; // starting choice, so it is not empty
-var screenbg = "black"; // off white background
+var screenbg = "white"; // off white background
 var lastscreenshot=1; // last screenshot never taken
 
 function preload() {
@@ -39,11 +39,11 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
 
   } else if (toolChoice == '2') { // second tool
 
-    stroke(20);
+    stroke(50);
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (toolChoice == '3') { // third tool
 
-    stroke(300, 100, 0, 80);
+    stroke();
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (toolChoice == '4') {
 
@@ -51,12 +51,12 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (key == '5') { // this tool calls a function
     stroke(0, 0, 255);
-    testbox();
+    //testbox();
     // make testbox do something!
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (toolChoice == '6') {
 
-    stroke(200);
+    stroke(200, 0, 0);
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (toolChoice == '7') {
 
