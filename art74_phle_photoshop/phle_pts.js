@@ -43,7 +43,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (toolChoice == '3') { // third tool
 
-    stroke();
+    stroke(img);
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (toolChoice == '4') {
 
@@ -51,7 +51,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (key == '5') { // this tool calls a function
     stroke(0, 0, 255);
-    //testbox();
+    testbox();
     // make testbox do something!
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (toolChoice == '6') {
