@@ -45,33 +45,33 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
 
     stroke(img);
     line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (toolChoice == '4') {
+  } else if (toolChoice == '4') { // fourth tool
 
     stroke(0, 0, 255);
     line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (key == '5') { // this tool calls a function
+  } else if (key == '5') { // this tool calls a function // fifth tool
 
     stroke(0, 0, 255);
     testbox();
     // make testbox do something!
     line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (toolChoice == '6') {
+  } else if (toolChoice == '6') { // sixth tool
 
     stroke(200, 0, 0);
     line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (toolChoice == '7') {
+  } else if (toolChoice == '7') { // seventh tool
 
     fill(100, 200, 100);
     image(img, mouseX, mouseY, 20, 20);
-  } else if (toolChoice == '8') {
+  } else if (toolChoice == '8') { // eighth tool
 
     fill(300, 100, 0, 80);
     rect(mouseX, mouseY, 20, 20);
-  } else if (toolChoice == '9') {
+  } else if (toolChoice == '9') { // ninth tool
 
     fill(300, 100, 0, 80);
     rect(mouseX, mouseY, 40, 40);
-  } else if (toolChoice == '0') {
+  } else if (toolChoice == '0') { // tenth tool - random
 
     stroke(0, 0);
     fill(random(255), random(255), random(255), random(255));
@@ -79,11 +79,14 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   } else if (toolChoice == 'g' || toolChoice == 'G') { // g places the image we pre-loaded
 
     image(img, mouseX, mouseY);
-  } else if(toolChoice == "l" || toolChoice == "L") {
+  } else if(toolChoice == "e" || toolChoice == "E") { // eleventh tool - eraser
 
-    
+    stroke(50);
+    fill(screenbg);
+  } else if(toolChoice == "x" || toolChoice == "X") {
 
-    }
+    background(screenbg);    
+  }
 
  }
 
