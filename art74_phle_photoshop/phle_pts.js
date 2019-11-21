@@ -72,13 +72,19 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     fill(300, 100, 0, 80);
     rect(mouseX, mouseY, 40, 40);
   } else if (toolChoice == '0') {
+
     stroke(0, 0);
     fill(random(255), random(255), random(255), random(255));
     rect(mouseX, mouseY, 200, 150);
   } else if (toolChoice == 'g' || toolChoice == 'G') { // g places the image we pre-loaded
-    image(img, mouseX, mouseY);
 
-  }
+    image(img, mouseX, mouseY);
+  } else if(toolChoice == "l" || toolChoice == "L") {
+
+    
+
+    }
+
  }
 
 function testbox() {
