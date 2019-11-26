@@ -3,7 +3,7 @@ let mx = [];
 let my = [];
 
 function setup() {
-  createCanvas(720, 400);
+  createCanvas(windowWidth,windowHeight);
   noStroke();
   fill(255, 153);
   for (let i = 0; i < num; i++) {
