@@ -1,4 +1,4 @@
-let message = 'tickle',
+let message = 'espresso',
   font,
   bounds, // holds x, y, w, h of the text's bounding box
   fontsize = 60,
