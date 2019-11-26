@@ -1,29 +1,43 @@
-let num = 60;
-let mx = [];
-let my = [];
+let message = 'tickle',
+  font,
+  bounds, // holds x, y, w, h of the text's bounding box
+  fontsize = 60,
+  x,
+  y; // x and y coordinates of the text
+
+function preload() {
+  font = loadFont('assets/SourceSansPro-Regular.otf');
+}
 
 function setup() {
-  createCanvas(720, 400);
-  noStroke();
-  fill(255, 153);
-  for (let i = 0; i < num; i++) {
-    mx.push(i);
-    my.push(i);
-  }
+  createCanvas(710, 400);
+
+  // set up the font
+  textFont(font);
+  textSize(fontsize);
+
+  // get the width and height of the text so we can center it initially
+  bounds = font.textBounds(message, 0, 0, fontsize);
+  x = width / 2 - bounds.w / 2;
+  y = height / 2 - bounds.h / 2;
 }
 
 function draw() {
-  background(237, 34, 93);
+  background(204, 120);
 
-  // Cycle through the array, using a different entry on each frame.
-  // Using modulo (%) like this is faster than moving all the values over.
-  let which = frameCount % num;
-  mx[which] = mouseX;
-  my[which] = mouseY;
+  // write the text in black and get its bounding box
+  fill(0);
+  text(message, x, y);
+  bounds = font.textBounds(message, x, y, fontsize);
 
-  for (let i = 0; i < num; i++) {
-    // which+1 is the smallest (the oldest in the array)
-    let index = (which + 1 + i) % num;
-    ellipse(mx[index], my[index], i, i);
+  // check if the mouse is inside the bounding box and tickle if so
+  if (
+    mouseX >= bounds.x &&
+    mouseX <= bounds.x + bounds.w &&
+    mouseY >= bounds.y &&
+    mouseY <= bounds.y + bounds.h
+  ) {
+    x += random(-5, 5);
+    y += random(-5, 5);
   }
 }
