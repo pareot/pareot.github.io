@@ -1,43 +1,165 @@
-let message = 'Coffee',
-  font,
-  bounds, // holds x, y, w, h of the text's bounding box
-  fontsize = 60,
-  x,
-  y; // x and y coordinates of the text
+//credit to Prashant Gupta, I used his example on p5js.org as a base to further realize my final project for ART 75 at SJSU
+// the snake is divided into small segments, which are drawn and edited on each 'draw' call
+let numSegments = 10;
+let direction = 'right';
 
-function preload() {
-  font = loadFont('assets/SourceSansPro-Regular.otf');
-}
+const xStart = 0; //starting x coordinate for snake
+const yStart = 250; //starting y coordinate for snake
+const diff = 10;
+
+let xCor = [];
+let yCor = [];
+
+let xFruit = 0;
+let yFruit = 0;
+let scoreElem;
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  scoreElem = createDiv('Score = 0');
+  scoreElem.position(20, 20);
+  scoreElem.id = 'score';
+  scoreElem.style('color', 'white');
 
-  // set up the font
-  textFont(font);
-  textSize(fontsize);
+  createCanvas(500, 500);
+  frameRate(15);
+  stroke(255);
+  strokeWeight(10);
+  updateFruitCoordinates();
 
-  // get the width and height of the text so we can center it initially
-  bounds = font.textBounds(message, 0, 0, fontsize);
-  x = width / 2 - bounds.w / 2;
-  y = height / 2 - bounds.h / 2;
+  for (let i = 0; i < numSegments; i++) {
+    xCor.push(xStart + i * diff);
+    yCor.push(yStart);
+  }
 }
 
 function draw() {
-  background(204, 120);
+  background(0);
+  for (let i = 0; i < numSegments - 1; i++) {
+    line(xCor[i], yCor[i], xCor[i + 1], yCor[i + 1]);
+  }
+  updateSnakeCoordinates();
+  checkGameStatus();
+  checkForFruit();
+}
 
-  // write the text in black and get its bounding box
-  fill(0);
-  text(message, x, y);
-  bounds = font.textBounds(message, x, y, fontsize);
+/*
+ The segments are updated based on the direction of the snake.
+ All segments from 0 to n-1 are just copied over to 1 till n, i.e. segment 0
+ gets the value of segment 1, segment 1 gets the value of segment 2, and so on,
+ and this results in the movement of the snake.
 
-  // check if the mouse is inside the bounding box and tickle if so
+ The last segment is added based on the direction in which the snake is going,
+ if it's going left or right, the last segment's x coordinate is increased by a
+ predefined value 'diff' than its second to last segment. And if it's going up
+ or down, the segment's y coordinate is affected.
+*/
+function updateSnakeCoordinates() {
+  for (let i = 0; i < numSegments - 1; i++) {
+    xCor[i] = xCor[i + 1];
+    yCor[i] = yCor[i + 1];
+  }
+  switch (direction) {
+    case 'right':
+      xCor[numSegments - 1] = xCor[numSegments - 2] + diff;
+      yCor[numSegments - 1] = yCor[numSegments - 2];
+      break;
+    case 'up':
+      xCor[numSegments - 1] = xCor[numSegments - 2];
+      yCor[numSegments - 1] = yCor[numSegments - 2] - diff;
+      break;
+    case 'left':
+      xCor[numSegments - 1] = xCor[numSegments - 2] - diff;
+      yCor[numSegments - 1] = yCor[numSegments - 2];
+      break;
+    case 'down':
+      xCor[numSegments - 1] = xCor[numSegments - 2];
+      yCor[numSegments - 1] = yCor[numSegments - 2] + diff;
+      break;
+  }
+}
+
+/*
+ I always check the snake's head position xCor[xCor.length - 1] and
+ yCor[yCor.length - 1] to see if it touches the game's boundaries
+ or if the snake hits itself.
+*/
+function checkGameStatus() {
   if (
-    mouseX >= bounds.x &&
-    mouseX <= bounds.x + bounds.w &&
-    mouseY >= bounds.y &&
-    mouseY <= bounds.y + bounds.h
+    xCor[xCor.length - 1] > width ||
+    xCor[xCor.length - 1] < 0 ||
+    yCor[yCor.length - 1] > height ||
+    yCor[yCor.length - 1] < 0 ||
+    checkSnakeCollision()
   ) {
-    x += random(-5, 5);
-    y += random(-5, 5);
+    noLoop();
+    const scoreVal = parseInt(scoreElem.html().substring(8));
+    scoreElem.html('Game ended! Your score was : ' + scoreVal);
+  }
+}
+
+/*
+ If the snake hits itself, that means the snake head's (x,y) coordinate
+ has to be the same as one of its own segment's (x,y) coordinate.
+*/
+function checkSnakeCollision() {
+  const snakeHeadX = xCor[xCor.length - 1];
+  const snakeHeadY = yCor[yCor.length - 1];
+  for (let i = 0; i < xCor.length - 1; i++) {
+    if (xCor[i] === snakeHeadX && yCor[i] === snakeHeadY) {
+      return true;
+    }
+  }
+}
+
+/*
+ Whenever the snake consumes a fruit, I increment the number of segments,
+ and just insert the tail segment again at the start of the array (basically
+ I add the last segment again at the tail, thereby extending the tail)
+*/
+function checkForFruit() {
+  point(xFruit, yFruit);
+  if (xCor[xCor.length - 1] === xFruit && yCor[yCor.length - 1] === yFruit) {
+    const prevScore = parseInt(scoreElem.html().substring(8));
+    scoreElem.html('Score = ' + (prevScore + 1));
+    xCor.unshift(xCor[0]);
+    yCor.unshift(yCor[0]);
+    numSegments++;
+    updateFruitCoordinates();
+  }
+}
+
+function updateFruitCoordinates() {
+  /*
+    The complex math logic is because I wanted the point to lie
+    in between 100 and width-100, and be rounded off to the nearest
+    number divisible by 10, since I move the snake in multiples of 10.
+  */
+
+  xFruit = floor(random(10, (width - 100) / 10)) * 10;
+  yFruit = floor(random(10, (height - 100) / 10)) * 10;
+}
+
+function keyPressed() {
+  switch (keyCode) {
+    case 74:
+      if (direction !== 'right') {
+        direction = 'left';
+      }
+      break;
+    case 76:
+      if (direction !== 'left') {
+        direction = 'right';
+      }
+      break;
+    case 73:
+      if (direction !== 'down') {
+        direction = 'up';
+      }
+      break;
+    case 75:
+      if (direction !== 'up') {
+        direction = 'down';
+      }
+      break;
   }
 }
