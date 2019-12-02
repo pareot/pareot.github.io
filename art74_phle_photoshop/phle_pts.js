@@ -4,7 +4,7 @@ var choice = '1'; // starting choice, so it is not empty
 var screenbg = "white"; // off white background
 var lastscreenshot=1; // last screenshot never taken
 
-function preload() {
+//function preload() {
 // preload() runs once, it may make you wait
 //  img = loadImage('avatar_pareot.png');  // 'avatar_pareot.png' needs to be next to this .js file
 // you can ALSO link to an image on your github account
@@ -85,7 +85,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     fill(screenbg);
   } else if(toolChoice == "x" || toolChoice == "X") {
 
-    background(screenbg);    
+    background(screenbg);
   }
 
  }
