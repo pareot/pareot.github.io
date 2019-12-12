@@ -18,7 +18,7 @@ function draw() {
 
    fill("black");
    ellipse(276,155,45,45);
-   fill("red);
+   fill("red");
    ellipse(288,150,14,14);
    fill("white");
    ellipse(288,150,3,3);
