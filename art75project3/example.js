@@ -6,10 +6,10 @@ function setup() {
 
 function draw() {
    background("gray");
-   
+
    fill("black");
    ellipse(276,155,45,45);
-   fill("red");
+   fill("orange");
    ellipse(288,150,14,14);
    fill("white");
    ellipse(288,150,3,3);
