@@ -12,7 +12,7 @@ function draw() {
    ellipse(264,377,33,33);
    fill("gray");
    rect(219,257,90,120);
-   fill("blue");          
+   fill("blue");
    rect(219,274,90,6);
 
 
@@ -26,5 +26,4 @@ function draw() {
    ellipse(263,148,5,5);
    ellipse(296,130,4,4);
    ellipse(305,162,3,3);
-
    }
