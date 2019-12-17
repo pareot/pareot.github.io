@@ -2,7 +2,7 @@ function setup () {
   createCanvas(windowWidth,windowHeight);
 }
 
-saveCount = 10;
+saveCount = 4;
 
 function keyPressed() {
   if(keyIsPressed) {
