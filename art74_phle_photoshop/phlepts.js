@@ -68,11 +68,11 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   } else if (toolChoice == '8') { // eighth tool
 
     fill(300, 100, 0, 80);
-    rect(mouseX, mouseY, 20, 20);
+    rect(mouseX, mouseY, 120, 120);
   } else if (toolChoice == '9') { // ninth tool
 
     fill(300, 100, 0, 80);
-    rect(mouseX, mouseY, 40, 40);
+    rect(mouseX, mouseY, 140, 140);
   } else if (toolChoice == '0') { // tenth tool - random
 
     stroke(0, 0);
