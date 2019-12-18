@@ -67,11 +67,13 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     image(img, mouseX, mouseY, 120, 120);
   } else if (toolChoice == '8') { // eighth tool
 
-    fill(300, 100, 0, 80);
-    rect(mouseX, mouseY, 120, 120);
+    noStroke();
+    fill(100, 100, 0, 80);
+    circle(mouseX, mouseY, 120, 120);
   } else if (toolChoice == '9') { // ninth tool
 
-    fill(300, 100, 0, 80);
+    noStroke();
+    fill(100, 100, 0, 80);
     rect(mouseX, mouseY, 140, 140);
   } else if (toolChoice == '0') { // tenth tool - random
 
