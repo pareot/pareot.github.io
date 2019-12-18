@@ -1,18 +1,18 @@
 var img;
-var initials ='phle'; // your initials
+var initials ='jm'; // your initials
 var choice = '1'; // starting choice, so it is not empty
-var screenbg = "white"; // off white background
+var screenbg = 250; // off white background
 var lastscreenshot=61; // last screenshot never taken
 
-//function preload() {
+function preload() {
 // preload() runs once, it may make you wait
-//  img = loadImage('avatar_pareot.png');  // 'avatar_pareot.png' needs to be next to this .js file
-// you can ALSO link to an image on your github account
-
+//  img = loadImage('cat.jpg');  // cat.jpg needs to be next to this .js file
+// you can link to an image on your github account
+  img = loadImage('https://dma-git.github.io/images/cat2-sm.jpg');
 }
 
 function setup() {
-createCanvas(windowWidth, windowHeight);  // canvas size
+createCanvas(600, 400);  // canvas size
 background(screenbg);   // use our background screen color
 
 }
@@ -29,67 +29,57 @@ function draw() {
 
 function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   // the key mapping if statements that you can change to do anything you want.
-  // just make sure each key option has the a stroke or fill and then what type of
+  // just make sure each key option has the a stroke or fill and then what type of 
   // graphic function
 
  if (toolChoice == '1' ) {  // first tool
-
+   
     stroke(01);
     line(mouseX, mouseY, pmouseX, pmouseY);
-
+    
   } else if (toolChoice == '2') { // second tool
 
-    stroke(50);
+    stroke(20);
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (toolChoice == '3') { // third tool
 
-    stroke(img);
+    stroke(300, 100, 0, 80);
     line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (toolChoice == '4') { // fourth tool
+  } else if (toolChoice == '4') {
 
     stroke(0, 0, 255);
     line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (key == '5') { // this tool calls a function // fifth tool
-
+  } else if (key == '5') { // this tool calls a function
     stroke(0, 0, 255);
     testbox();
     // make testbox do something!
     line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (toolChoice == '6') { // sixth tool
+  } else if (toolChoice == '6') {
 
-    stroke(200, 0, 0);
+    stroke(200);
     line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (toolChoice == '7') { // seventh tool
+  } else if (toolChoice == '7') {
 
     fill(100, 200, 100);
-    image(img, mouseX, mouseY, 20, 20);
-  } else if (toolChoice == '8') { // eighth tool
+    rect(mouseX, mouseY, 20, 20);
+  } else if (toolChoice == '8') {
 
     fill(300, 100, 0, 80);
     rect(mouseX, mouseY, 20, 20);
-  } else if (toolChoice == '9') { // ninth tool
+  } else if (toolChoice == '9') {
 
     fill(300, 100, 0, 80);
     rect(mouseX, mouseY, 40, 40);
-  } else if (toolChoice == '0') { // tenth tool - random
-
+  } else if (toolChoice == '0') {
     stroke(0, 0);
     fill(random(255), random(255), random(255), random(255));
     rect(mouseX, mouseY, 200, 150);
   } else if (toolChoice == 'g' || toolChoice == 'G') { // g places the image we pre-loaded
-
     image(img, mouseX, mouseY);
-  } else if(toolChoice == "e" || toolChoice == "E") { // eleventh tool - eraser
-
-    stroke(50);
-    fill(screenbg);
-  } else if(toolChoice == "x" || toolChoice == "X") {
-
-    background(screenbg);
+    
   }
-
  }
-
+ 
 function testbox() {
 // this is a test function that will show you how you can put your own functions into the sketch
   x = mouseX;
@@ -120,5 +110,5 @@ function saveme(){
     saveCanvas(filename, 'jpg');
   }
   lastscreenshot=second(); // set this to the current second so no more than one per second
-
+  
 }
