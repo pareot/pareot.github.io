@@ -85,6 +85,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
 
     stroke(75);
     fill(screenbg);
+    circle(mouseX, mouseY, 70);
   } else if(toolChoice == "x" || toolChoice == "X") {
 
     background(screenbg);
