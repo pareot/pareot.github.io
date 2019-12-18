@@ -13,6 +13,7 @@ function setup () {
 }
 
 function draw () {
-  ellipseMode(RADIUS);
+  ellipseMode(CENTER);
   fill(color);
+  ellipse()
 }
