@@ -116,7 +116,7 @@ function saveme(){
     //this will save the name as the intials, date, time and a millis counting number.
     // it will always be larger in value then the last one.
   filename=initials+day() + hour() + minute() +second();
-  if (second()!=lastscreenshot) { // don't take a screenshot if you just took one
+  if (second()!=lastscreenshot + 1) { // don't take a screenshot if you just took one
     saveCanvas(filename, 'jpg');
   }
   lastscreenshot=second(); // set this to the current second so no more than one per second
