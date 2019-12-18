@@ -5,3 +5,12 @@ var LeftEBH; //Left Eyebrow Height
 var RightEBH; //Right Eyebrow Height
 var LeftEyeOpen; //Openness of left-eye
 var RightEyeOpen; //Opennes of right-Eyebrow
+
+function setup () {
+  createCanvas(windowWidth; windowHeight);
+  background("white");
+}
+
+function draw () {
+  
+}
