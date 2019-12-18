@@ -8,7 +8,7 @@ var lastscreenshot=61; // last screenshot never taken
 // preload() runs once, it may make you wait
 //  img = loadImage('avatar_pareot.png');  // 'avatar_pareot.png' needs to be next to this .js file
 // you can ALSO link to an image on your github account
-}
+// }
 
 
 function setup() {
