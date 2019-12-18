@@ -83,7 +83,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     image(img, mouseX, mouseY);
   } else if(toolChoice == "e" || toolChoice == "E") { // eleventh tool - eraser
 
-    stroke(75);
+    noStroke();
     fill(screenbg);
     circle(mouseX, mouseY, 70);
   } else if(toolChoice == "x" || toolChoice == "X") {
