@@ -29,14 +29,14 @@ function draw() {
 
 function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   // the key mapping if statements that you can change to do anything you want.
-  // just make sure each key option has the a stroke or fill and then what type of 
+  // just make sure each key option has the a stroke or fill and then what type of
   // graphic function
 
  if (toolChoice == '1' ) {  // first tool
-   
+
     stroke(01);
     line(mouseX, mouseY, pmouseX, pmouseY);
-    
+
   } else if (toolChoice == '2') { // second tool
 
     stroke(20);
@@ -76,10 +76,10 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     rect(mouseX, mouseY, 200, 150);
   } else if (toolChoice == 'g' || toolChoice == 'G') { // g places the image we pre-loaded
     image(img, mouseX, mouseY);
-    
+
   }
  }
- 
+
 function testbox() {
 // this is a test function that will show you how you can put your own functions into the sketch
   x = mouseX;
@@ -110,5 +110,5 @@ function saveme(){
     saveCanvas(filename, 'jpg');
   }
   lastscreenshot=second(); // set this to the current second so no more than one per second
-  
+
 }
