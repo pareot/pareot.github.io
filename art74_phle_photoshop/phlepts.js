@@ -6,7 +6,7 @@ var lastscreenshot=61; // last screenshot never taken
 
 function preload() {
 // preload() runs once, it may make you wait
-  img = loadImage('art74_phle_photoshop/avatar_pareot.png');  // 'avatar_pareot.png' needs to be next to this .js file
+  img = loadImage('https://raw.githubusercontent.com/pareot/pareot.github.io/master/art74_phle_photoshop/avatar_pareot.png');  // 'avatar_pareot.png' needs to be next to this .js file
 // you can ALSO link to an image on your github account
 }
 
