@@ -1,10 +1,11 @@
-var Xpos; //Face horizontal position
-var Ypos; //Face verticel position
-var Scale; //Face scale
-var LeftEBH; //Left Eyebrow Height
-var RightEBH; //Right Eyebrow Height
-var LeftEyeOpen; //Openness of left-eye
-var RightEyeOpen; //Opennes of right-Eyebrow
+var posx; //Face horizontal position
+var posy; //Face verticel position
+var scale; //Face scale
+var leftebh; //Left Eyebrow Height
+var rightebh; //Right Eyebrow Height
+var lefteyeopen; //Openness of left-eye
+var righteyeopen; //Opennes of right-Eyebrow
+var color=;
 
 function setup () {
   createCanvas(windowWidth; windowHeight);
@@ -12,5 +13,7 @@ function setup () {
 }
 
 function draw () {
-  
+  ellipseMode(RADIUS);
+  fill(color);
+
 }
