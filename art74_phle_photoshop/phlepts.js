@@ -49,7 +49,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
 
     stroke(0, 0, 255);
     line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (key == '5') { // this tool calls a function // fifth tool
+  } else if (key == '5') { // this tool calls a function // fifth tool - AKA: testbox
 
     stroke(0, 0, 255);
     testbox();
@@ -107,7 +107,7 @@ function clear_print() {
 // p calls the routine saveme, which saves a copy of the screen
   if (key == 'x' || key == 'X') {
     background(screenbg); // set the screen back to the background color
-  } else if (key == 'p' || key == 'P') {
+  } else if (key == 's' || key == 'S') {
      saveme();  // call saveme which saves an image of the screen
   }
 }
