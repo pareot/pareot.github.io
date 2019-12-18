@@ -15,5 +15,4 @@ function setup () {
 function draw () {
   ellipseMode(RADIUS);
   fill(color);
-
 }
