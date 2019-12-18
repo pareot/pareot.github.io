@@ -34,24 +34,26 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
 
  if (toolChoice == '1' ) {  // first tool
 
-    stroke(01);
+    stroke("white");
+    strokeWeight(10);
     line(mouseX, mouseY, pmouseX, pmouseY);
 
   } else if (toolChoice == '2') { // second tool
 
-    stroke(50);
+    stroke("black");
+    strokeWeight(10);
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (toolChoice == '3') { // third tool
 
-    stroke(img);
+    stroke("gray");
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (toolChoice == '4') { // fourth tool
 
-    stroke(0, 0, 255);
+    stroke("red");
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (key == '5') { // this tool calls a function // fifth tool - AKA: testbox
 
-    stroke(0, 0, 255);
+    stroke("blue");
     testbox();
     // make testbox do something!
     line(mouseX, mouseY, pmouseX, pmouseY);
@@ -62,7 +64,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   } else if (toolChoice == '7') { // seventh tool
 
     fill(100, 200, 100);
-    image(img, mouseX, mouseY, 20, 20);
+    image(img, mouseX, mouseY, 120, 120);
   } else if (toolChoice == '8') { // eighth tool
 
     fill(300, 100, 0, 80);
