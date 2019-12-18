@@ -4,11 +4,11 @@ var choice = '1'; // starting choice, so it is not empty
 var screenbg = "green"; // off white background
 var lastscreenshot=61; // last screenshot never taken
 
-function preload() {
+//function preload() {
 // preload() runs once, it may make you wait
-  img = loadImage('avatar_pareot.PNG');  // 'avatar_pareot.png' needs to be next to this .js file
+//  img = loadImage('avatar_pareot.PNG');  // 'avatar_pareot.png' needs to be next to this .js file
 // you can ALSO link to an image on your github account
-}
+//}
 
 
 function setup() {
