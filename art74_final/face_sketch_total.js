@@ -19,20 +19,21 @@ function draw () {
   stroke(10);
   ellipse(posx, posy, posx - );
 
-//  rectMode(RADIUS); //drawing left eyebrow
-//  noFill();
-//  stroke(5);
-//  rect(leftebh, leftebh, 50, 50);
+  rectMode(RADIUS); //drawing left eyebrow
+  noFill();
+  stroke(5);
+  rect(leftebh, leftebh, 50, 50);
 
-//  rectMode(RADIUS); //drawing right eyebrow
-//  noFill();
-//  stroke(5);
-//  rect(rightebh, rightebh, 50, 50);
+  rectMode(RADIUS); //drawing right eyebrow
+  noFill();
+  stroke(5);
+  rect(rightebh, rightebh, 50, 50);
 
-//  ellipseMode(RADIUS); //drawing left eye
-//  noFill();
-//  stroke(3);
-//  ellipse(posx);
+  ellipseMode(RADIUS); //drawing left eye
+  noFill();
+  stroke(3);
+  ellipse(posx);
+
   }
 
 }
