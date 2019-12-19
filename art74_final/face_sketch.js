@@ -2,9 +2,10 @@ var posx; //face horizontal position
 var posy; //face verticel position
 var leftebh; //left eyebrow height
 var rightebh; //right eyebrow height
-var lefteyeopen; //Left eye openness
+var lefteyeopen; //left eye openness
+var righteyeopen; //right eye openness
 var jawop; //jaw openness
-var righteyeopen; //Opennes of right-Eyebrow
+var nosflare; //nostril flare
 
 function setup () {
   createCanvas(windowWidth, windowHeight);
