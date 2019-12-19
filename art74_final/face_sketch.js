@@ -32,7 +32,7 @@ function draw () {
   ellipseMode(RADIUS); //drawing left eye
   noFill();
   stroke(3);
-  ellipse();
+  ellipse(posx);
 
   }
 
