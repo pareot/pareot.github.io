@@ -19,9 +19,20 @@ function draw () {
   stroke(10);
   ellipse(posx, posy, posx - );
 
-  noFill(); //drawing left eyebrow height
+  rectMode(RADIUS); //drawing left eyebrow
+  noFill();
   stroke(5);
-  ellipse(pmouseX - )
+  rect(leftebh, leftebh, 50, 50);
+
+  rectMode(RADIUS); //drawing right eyebrow
+  noFill();
+  stroke(5);
+  rect(rightebh, rightebh, 50, 50);
+
+  ellipseMode(RADIUS); //drawing left eye
+  noFill();
+  stroke(3);
+  ellipse();
 
   }
 
