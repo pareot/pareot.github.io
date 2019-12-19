@@ -1,6 +1,6 @@
 var posx; //Face horizontal position
 var posy; //Face verticel position
-var scale; //Face scale
+var fscale = 100; //Face scale
 var leftebh; //Left Eyebrow Height
 var rightebh; //Right Eyebrow Height
 var lefteyeopen; //Openness of left-eye
@@ -17,7 +17,7 @@ function draw () {
   ellipseMode(CENTER); // Drawing the face
   noFill();
   stroke(5);
-  ellipse(pmouseX, pmouseY, scale, scale);
+  ellipse(pmouseX, pmouseY, fscale, fscale);
   }
 
 }
