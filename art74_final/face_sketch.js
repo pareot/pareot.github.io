@@ -1,5 +1,5 @@
-var posx; //face horizontal position
-var posy; //face verticel position scale
+var posx = 100; //face horizontal position
+var posy = 100; //face verticel position scale
 var leftebh; //left eyebrow height
 var rightebh; //right eyebrow height
 var lefteyeopen; //left eye openness
