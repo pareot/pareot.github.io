@@ -1,6 +1,5 @@
 var posx = 250; //face horizontal position
 var posy = 350; //face verticel position scale
-let sket; //data submission
 var leftebh; //left eyebrow height
 var rightebh; //right eyebrow height
 var lefteyeopen; //left eye openness
@@ -24,7 +23,7 @@ function setup () {
   //button.mousePressed(draw);
 }
 
-function sketch () {
+function draw () {
   //if (mouseIsPressed) {
   for (let i = 0; i < 1) {
     ellipseMode(RADIUS); //drawing the face: width and length
