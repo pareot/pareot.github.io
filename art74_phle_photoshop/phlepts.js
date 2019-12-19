@@ -73,7 +73,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   } else if (toolChoice == '9') { // ninth tool
 
     noStroke();
-    fill(0, 100, 200, 80);
+    fill(0, 100, 200, 40);
     rect(mouseX, mouseY, 140, 140);
   } else if (toolChoice == '0') { // tenth tool - random
 
