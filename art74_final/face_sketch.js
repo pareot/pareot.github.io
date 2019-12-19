@@ -24,14 +24,11 @@ function setup () {
 }
 
 function draw () {
-  //if (mouseIsPressed) {
-  for (let i = 0; i < 1) {
+  if (mouseIsPressed) {
     ellipseMode(RADIUS); //drawing the face: width and length
     noFill();
     stroke(10);
     ellipse(posx, posy, random(-240, 240), random (-180, 180));
-  }
-
 //  rectMode(RADIUS); //drawing left eyebrow
 //  noFill();
 //  stroke(5);
@@ -46,6 +43,6 @@ function draw () {
 //  noFill();
 //  stroke(3);
 //  ellipse(posx);
-//  } // bracket of if (mouseIsPressed)
+  }
 
 }
