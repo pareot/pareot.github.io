@@ -1,5 +1,5 @@
-var posx; //Face horizontal position
-var posy; //Face verticel position
+var posx = mouseX; //Face horizontal position
+var posy = mouseY; //Face verticel position
 var scale; //Face scale
 var leftebh; //Left Eyebrow Height
 var rightebh; //Right Eyebrow Height
@@ -13,7 +13,9 @@ function setup () {
 }
 
 function draw () {
-  ellipseMode(CENTER);
-  fill(color);
-  ellipse()
+  ellipseMode(CENTER); // Drawing the face
+  fill(skin);
+  ellipse(mouseX, mouseY, scale);
+
+
 }
