@@ -13,7 +13,6 @@ function setup () {
 }
 
 function draw () {
-
   if (mouseIsPressed) {
   ellipseMode(CENTER); // Drawing the face
   noFill();
