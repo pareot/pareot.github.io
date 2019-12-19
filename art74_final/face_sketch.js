@@ -17,7 +17,7 @@ function draw () {
   ellipseMode(RADIUS); //drawing the face: width and length
   noFill();
   stroke(10);
-  ellipse(posx, posy, posx - );
+  ellipse(posx, posy, random(-240, 240), random (-180, 180));
 
 //  rectMode(RADIUS); //drawing left eyebrow
 //  noFill();
