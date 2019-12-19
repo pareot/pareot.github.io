@@ -14,7 +14,8 @@ function setup () {
 
 function draw () {
   ellipseMode(CENTER); // Drawing the face
-  fill(skin);
+  noFill();
+  stroke(5);
   ellipse(mouseX, mouseY, scale);
 
 
