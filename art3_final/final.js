@@ -1,8 +1,8 @@
 let x = [];
-let mole;
+let hammer;
 
 function preload() {
-  mole = loadImage('');
+  hammer = loadImage('hammer.png');
 }
 
 
