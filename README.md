@@ -1,4 +1,4 @@
-# Pareot
+# My name is Phuc Le.
 
 ### I am an artist. This is my portfolio site.
 
