@@ -5,9 +5,103 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+
+<!--modal-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#myImg:hover {
+    opacity: 0.7;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+/* Add Animation */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+from {
+-webkit-transform:scale(0)
+}
+to {
+-webkit-transform:scale(1)
+}
+}
+@keyframes zoom {
+from {
+transform:scale(0)
+}
+to {
+transform:scale(1)
+}
+}
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+.modal-content {
+    width: 100%;
+}
+}
+</style>
+<!--modal end-->
 </head>
 
 <style>
@@ -17,6 +111,20 @@ body {
 </style>
 
 <body>
+<div class="modal in" id="viewImg" tabindex="-1" role="dialog" style="display: block;">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">View Image</h4>
+      </div>
+      <div class="modal-body">
+        <div id="imgViewer" style="overflow-x: scroll;"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!--nav bar-->
 <div class="container-fluid">
   <h2 style="color: palegoldenrod; text-align:center"><b>Phuc Le's</b></h2>
@@ -26,23 +134,17 @@ body {
       <!--Art 101 dropdown-->
       <div class="dropdown">
         <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Art 101 </button>
-        <div class="dropdown-menu">
-			<a class="dropdown-item" href="art101_page1.html">Project 1</a>
-			<a class="dropdown-item" href="art101_page2.html">Project 2</a>
-			<a class="dropdown-item" href="#">Project 3</a> </div>
+        <div class="dropdown-menu"> <a class="dropdown-item" href="art101_page1.html">Project 1</a> <a class="dropdown-item" href="art101_page2.html">Project 2</a> <a class="dropdown-item" href="#">Project 3</a> </div>
       </div>
       <!--Art 103 dropdown-->
       <div class="dropdown">
         <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Art 103 </button>
-        <div class="dropdown-menu">
-			<a class="dropdown-item" href="art103_page1.html">Project 1</a>
-			<a class="dropdown-item" href="art103_page2.html">Project 2</a>
-			<a class="dropdown-item" href="#">Project 3</a> </div>
+        <div class="dropdown-menu"> <a class="dropdown-item" href="art103_page1.html">Project 1</a> <a class="dropdown-item" href="art103_page2.html">Project 2</a> <a class="dropdown-item" href="#">Project 3</a> </div>
       </div>
     </ul>
   </nav>
 </div>
-<!--nav bar ended-->
+<!--nav bar ended--> 
 <br>
 <!--Spher-C-al's pic-->
 <div class="container-fluid">
@@ -60,7 +162,7 @@ body {
     </div>
   </div>
 </div>
-<!--break line-->
+<!--break line--> 
 <br>
 <!--Orca's pic-->
 <div class="container-fluid">
@@ -79,7 +181,7 @@ body {
     </div>
   </div>
 </div>
-<!--break line-->
+<!--break line--> 
 <br>
 <!--Aakocra's pic-->
 <div class="container-fluid">
