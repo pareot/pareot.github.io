@@ -5,40 +5,41 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
 <style>
 body {
-    /* background-image: url("GithubPhoto/cover.png"); */
+    font-family: Arial, Helvetica, sans-serif;/* background-image: url("GithubPhoto/cover.png"); */
 }
 </style>
 
 <body>
-  <!--nav bar-->
-  <div class="container-fluid">
-  <h2 style="color: grey; text-align:center"><b>Phuc Le's</b></h2>
-  <p style="color: grey; text-align:center"><b>DMA Portfolio Page</b></p>
-  <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
-    <ul class="nav">
-      <!--Art 101 dropdown-->
-      <div class="dropdown">
-        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Art 101 </button>
-        <div class="dropdown-menu"> <a class="dropdown-item" href="art101_page1.html">Project 1</a> <a class="dropdown-item" href="art101_page2.html">Project 2</a> <a class="dropdown-item text-white-50 bg-dark" href="#">Next Project</a> </div>
-      </div>
-      <!--Art 103 dropdown-->
-      <div class="dropdown">
-        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Art 103 </button>
-        <div class="dropdown-menu"> <a class="dropdown-item" href="art103_oblique.html">Oblique Process</a> <a class="dropdown-item" href="art103_reading1.html">Reading 1</a> <a class="dropdown-item" href="art103_modntes.html">Modular N Tessllation</a><a class="dropdown-item text-white-50 bg-dark" href="#">Next Project</a> </div>
-      </div>
-      </div>
-    </ul>
-  </nav>
-  </div>
-  <!--nav bar ended-->
+<!--nav bar-->
+<div class="container-fluid">
+<h2 style="color: grey; text-align:center"><b>Phuc Le's</b></h2>
+<p style="color: grey; text-align:center"><b>DMA Portfolio Page</b></p>
+<nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+  <ul class="nav">
+    <!--Art 101 dropdown-->
+    <div class="dropdown">
+      <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Art 101 </button>
+      <div class="dropdown-menu"> <a class="dropdown-item" href="art101_page1.html">Project 1</a> <a class="dropdown-item" href="art101_page2.html">Project 2</a> <a class="dropdown-item text-white-50 bg-dark" href="#">Next Project</a> </div>
+    </div>
+    <!--Art 103 dropdown-->
+    <div class="dropdown">
+      <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Art 103 </button>
+      <div class="dropdown-menu"> <a class="dropdown-item" href="art103_oblique.html">Oblique Process</a> <a class="dropdown-item" href="art103_reading1.html">Reading 1</a> <a class="dropdown-item" href="art103_modntes.html">Modular N Tessllation</a><a class="dropdown-item text-white-50 bg-dark" href="#">Next Project</a> </div>
+    </div>
+    </div>
+  </ul>
+</nav>
+</div>
+<!--nav bar ended--> 
 <br>
+
 <!--Pic goes here-->
 <div class="container-fluid">
   <div class="row"> <img src="GithubPhoto/avatar_pareot.png" alt ="place_holder_image" class="mx-auto d-block img-fluid" style="height:600px;width:800px;"></div>
@@ -55,8 +56,23 @@ body {
     </div>
   </div>
 </div>
-<!--break line-->
+<!--break line--> 
 <br>
+
+<!--Test image here-->
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <img src="GithubPhoto/cover.png" class="imagepreview" style="width: 100%;" > </div>
+    </div>
+  </div>
+</div>
+
+<!--break line--> 
+<br>
+
 <!--Link back to the main page-->
 <div style="text-align: center"> <a href="index.html" class="class="text-center"" >Back to the main page</a> </div>
 <br>
