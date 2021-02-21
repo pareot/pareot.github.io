@@ -13,39 +13,39 @@ void setup() {
   imageMode(CENTER);
   //load image 1 and 2
   img = loadImage("image1.jpg");
-  img2 = loadImage("image2.png");
+  img2 = loadImage("image2.png"); 
 }
 void draw() {
   //bg
-  background(value);
+  background(value);  
   //set fill
-  fill(value);
+  fill(value);  
   //draw rectangle
   //rect(width/2, height/2, width/4, height/4);
-
+  
   //load image
   image(img2, width/2, height/2, width*2, height*2);
   tint(255, 20);
-
+  
   printArray(PFont.list());
   f = createFont("Webdings", 18);
   //f = createFont("Georgia", 18);
   textFont(f);
   fill(0, 255, 0);
-  text("What would look good here?", mouseX, mouseY, 200, 400);
-}
+  text("What would look good here?", mouseX, mouseY, 200, 400);  
+} 
 
 void mousePressed() {
   if (mouseButton == LEFT) {
-    value = 0;
+    value = 0;        
   } else if (mouseButton == RIGHT) {
-    value = 255;
+    value = 255;    
   } else if (mouseButton == CENTER) {
     value = 125;
   } else {
     value = 0;
   }
-
+  
 //  for (int i=0 ; i < 25; i++) {
 //    if (mouseX > i) {
 //      value = 0;
