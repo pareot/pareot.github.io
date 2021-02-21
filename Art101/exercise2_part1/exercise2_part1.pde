@@ -46,11 +46,11 @@ void mousePressed() {
     value = 0;
   }
   
-  for (int i=0 ; i < 25; i++) {
-    if (mouseX > i) {
-      value = 0;
-    } else {
-      value = 255;
-    }
-  }
+//  for (int i=0 ; i < 25; i++) {
+//    if (mouseX > i) {
+//      value = 0;
+//    } else {
+//      value = 255;
+//    }
+//  }
 }
