@@ -57,6 +57,13 @@ void draw() {
   //if (counter > width) {
   //  counter = 0;
   //}
+
+  ////img for vid
+  //if (frameCount < 200) {
+  //  saveFrame("images/proj2-######.png");
+  //} else {
+  //  exit();
+  //}
 } 
 
 void box (float Xpos, float Ypos) {
@@ -91,11 +98,4 @@ void keyPressed() {
       //event = 2;
     }
   }
-  
-  ////img for vid
-  //if (frameCount < 200) {
-  //  saveFrame("images/proj2-######.png");
-  //} else {
-  //  exit();
-  //}
 }
