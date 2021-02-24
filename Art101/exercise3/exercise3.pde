@@ -10,7 +10,7 @@ float rev3 = PI;
 
 void setup () {
   size(700, 700);
-  background(255);
+  //background(255);
   smooth();
   frameRate(12);
 
@@ -29,6 +29,13 @@ void setup () {
 
 void draw () {
   plClock();
+  
+  ////img for vid
+  //if (frameCount < 201) {
+  //  saveFrame("images/proj3-######.png");
+  //} else {
+  //  exit();
+  //}
 
 }
 
@@ -41,7 +48,7 @@ void plClock() {
   
   
   //draw a square as bg
-  plRect(width/2, height/2, width, height, lm, 255);
+  //plRect(width/2, height/2, width, height, lm, 255);
 
 
   //draw clock's body
@@ -152,13 +159,6 @@ void plClock() {
   rotate(PI/4);
   plQd(0, 0,    350, 0,    300, 50,   0, 50,    br, 255);
   pop();
-  
-  ////img for vid
-  //if (frameCount < 201) {
-  //  saveFrame("images/proj3-######.png");
-  //} else {
-  //  exit();
-  //}
 }
 
   //*****************
