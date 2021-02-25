@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Art 101 Project 1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("GithubPhoto/cover tes.png");
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+</style>
+
+<body>
+  <!--nav bar-->
+  <div class="container-fluid bg-dark">
+  <br>
+  <h1 style="color: antiquewhite; text-align:center">PHUC LE</h1>
+  <p style="color: antiquewhite; text-align:center">DMA Portfolio Page</p>
+  <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+    <ul class="nav">
+      <!--Art 101 dropdown-->
+      <div class="dropdown">
+        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Art 101 </button>
+        <div class="dropdown-menu"> <a class="dropdown-item" href="art101_project1.html">Project 1</a> <a class="dropdown-item" href="art101_page2.html">Project 2</a> <a class="dropdown-item text-white-50 bg-dark" href="#">Next Project</a> </div>
+      </div>
+      <!--Art 103 dropdown-->
+      <div class="dropdown">
+        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Art 103 </button>
+        <div class="dropdown-menu"> <a class="dropdown-item" href="art103_oblique.html">Oblique Process</a> <a class="dropdown-item" href="art103_reading1.html">Reading 1</a> <a class="dropdown-item" href="art103_modntes.html">Modular N Tessllation</a><a class="dropdown-item text-white-50 bg-dark" href="#">Next Project</a> </div>
+      </div>
+      </div>
+    </ul>
+  </nav>
+  </div>
+  <!--nav bar ended-->
+
+
+<!--Project 1-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4 border"> <br>
+      <h3 style="color: grey; text-align:center">Digital Wheel</h3>
+      <img height="100%" width="80%" id="1" data-toggle="modal" data-target="#myModal" src="GithubPhoto/art101/project1_image.png" alt="digi tire" class="img-thumbnail mx-auto d-block" style="max-width:300px">
+
+      <!-- <p style="color: grey; text-align:center">(Click on image to enlarge)</p> -->
+
+      <!-- modal for artist statement -->
+      <div class="container-fluid ">
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-light align:center" data-toggle="modal" data-target="#myModal">
+          Artist Statement
+        </button>
+
+        <!-- The Modal -->
+        <div class="modal " id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Digital Wheel</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                I craeted this work with inspiration from randomness. The first visual experience the viewers see would likely be the cog-like wheel, the color-shifting diamond shape in the center of the wheel and the wave along the border of the painting. However, those imagery are common in today's daily experience, what bring depth to the piece is the random appreance of various rectangle shapes in the background--build ontop of one another, they give off the feeling of being pushed into the background, thus creating a visual effect of the painting moving forward.
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- modal for artist statement ENDED -->
+
+    </div>
+
+    <div class="col-sm-8 border"> <br>
+      <!-- 16:9 aspect ratio -->
+      <div class="embed-responsive embed-responsive-16by9">
+        <video width="320" height="240" controls>
+          <source src="GithubPhoto/art101/digital wheel.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <!--Project 2-->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4 border"> <br>
+        <h3 style="color: grey; text-align:center">Box</h3>
+        "<img height="100%" width="80%" id="1" data-toggle="modal" data-target="#myModal" src="GithubPhoto/art101/project2_image.png" alt="box" class="img-thumbnail mx-auto d-block" style="max-width:300px">
+        <!-- <p style="color: grey; text-align:center">(Click on image to enlarge)</p> -->
+
+        <!-- modal for artist statement -->
+        <div class="container">
+          <!-- Button to Open the Modal -->
+          <button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
+            Artist Statement
+          </button>
+
+          <!-- The Modal -->
+          <div class="modal" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Digital Wheel</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                  I craeted this work with inspiration from randomness. The first visual experience the viewers see would likely be the cog-like wheel, the color-shifting diamond shape in the center of the wheel and the wave along the border of the painting. However, those imagery are common in today's daily experience, what bring depth to the piece is the random appreance of various rectangle shapes in the background--build ontop of one another, they give off the feeling of being pushed into the background, thus creating a visual effect of the painting moving forward.
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- modal for artist statement ENDED -->
+
+      </div>
+
+      <div class="col-sm-8 border"> <br>
+        <!-- 16:9 aspect ratio -->
+        <div class="embed-responsive embed-responsive-16by9">
+          <video width="320" height="240" controls>
+            <source src="GithubPhoto/art101/boo.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+
+    <!--Project 3-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4 border"> <br>
+          <h3 style="color: grey; text-align:center">Retro Clock</h3>
+          "<img height="100%" width="80%" id="1" data-toggle="modal" data-target="#myModal" src="GithubPhoto/art101/project3_image.png" alt="clock" class="img-thumbnail mx-auto d-block" style="max-width:300px">
+          <!-- <p style="color: grey; text-align:center">(Click on image to enlarge)</p> -->
+
+          <!-- modal for artist statement -->
+          <div class="container">
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
+              Artist Statement
+            </button>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Digital Wheel</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    I craeted this work with inspiration from randomness. The first visual experience the viewers see would likely be the cog-like wheel, the color-shifting diamond shape in the center of the wheel and the wave along the border of the painting. However, those imagery are common in today's daily experience, what bring depth to the piece is the random appreance of various rectangle shapes in the background--build ontop of one another, they give off the feeling of being pushed into the background, thus creating a visual effect of the painting moving forward.
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- modal for artist statement ENDED -->
+
+        </div>
+
+        <div class="col-sm-8 border"> <br>
+          <!-- 16:9 aspect ratio -->
+          <div class="embed-responsive embed-responsive-16by9">
+            <video width="320" height="240" controls>
+              <source src="GithubPhoto/art101/ss retro clock.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <!-- modal for artist statement -->
+            <div class="container">
+              <!-- Button to Open the Modal -->
+              <button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
+                Artist Statement
+              </button>
+
+              <!-- The Modal -->
+              <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Digital Wheel</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      I craeted this work with inspiration from randomness. The first visual experience the viewers see would likely be the cog-like wheel, the color-shifting diamond shape in the center of the wheel and the wave along the border of the painting. However, those imagery are common in today's daily experience, what bring depth to the piece is the random appreance of various rectangle shapes in the background--build ontop of one another, they give off the feeling of being pushed into the background, thus creating a visual effect of the painting moving forward.
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- modal for artist statement ENDED -->
+          </div>
+        </div>
+        <br>
+      </div>
+
+      <!--IMAGE MODAL BEGIN-->
+      <!-- set image's style -->
+      <!-- <img height="100" width="80" id="1" data-toggle="modal" data-target="#myModal" src='http://tympanus.net/Tutorials/CaptionHoverEffects/images/1.png' alt='Text dollar code part one.' />
+      <img height="100" width="80" id="2" data-toggle="modal" data-target="#myModal" src='http://tympanus.net/Tutorials/CaptionHoverEffects/images/2.png' alt='Text dollar code part one.' /> -->
+
+      <!-- MODAL -->
+      <div id="myModal" class="modal fade container-fluid" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body"> <img class="img-responsive" src="GithubPhoto/art101/project1_wheel.png" /> </div>
+            <div class="modal-footer con">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Link back to the main page-->
+      <div style="text-align: center" class="bg-dark"> <a href="index.html" class="class="text-center"" >
+        <h3>Back to the main page</h3>
+      </a> </div>
+      <br>
+    </body>
+    </html>
