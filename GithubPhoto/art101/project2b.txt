@@ -20,11 +20,14 @@ void setup() {
   brank[2] = new Branch (width/2, 0);
   brank[3] = new Branch (0, height/2);
   brank[4] = new Branch (width, height/2);
+  for (int i=5; i<brank.length; i++) {
+    brank[i] = new Branch ( random(0, width), random(0, height) );
+  }
+  
 }
 
 void draw() {
   background(0);
-  frameRate(30);
 
   brank[1].display(gcounter, l, 0);
   brank[2].display(gcounter, -l, PI);
@@ -39,19 +42,19 @@ void draw() {
 
   if ( frameCount > 50) {
 
-    //for (int i=5; i<brank.length; i++) {
+    for (int i=5; i<brank.length; i++) {
     //  //brank array setup
     //  //brank[i] = new Branch ( random(0, width), random(0, height), angle[int(random(angle.length))] );
     //  brank[i] = new Branch ( random(0, width), random(0, height) );
 
-    //  //brank display setup
-    //  brank[i].display(gcounter, l, random(0, PI*2 -1) );
-    //}
+      //brank display setup
+      brank[i].display(gcounter, -l, random(0, PI*2 -1) );
+    }      
 
     gcounter++;
   }
   
-  if (frameCount > 200) {
+  if (frameCount > 120) {
     gcounter+= 100;
   }
 
