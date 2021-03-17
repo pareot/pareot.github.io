@@ -1,0 +1,165 @@
+int[] angle = {0, 90, 180, 270, 350}; //5 elements, count to 4
+int l = 120;
+
+Branch t1;
+Branch t2;
+
+Branch[] brank; //declare array
+
+
+float gcounter = 0; //counter control float c in display, which in turn, control the gradually increasing angle 
+
+void setup() {
+  size(1600, 1000);
+
+  //assign array
+  brank = new Branch[35];
+
+  //draw
+  brank[1] = new Branch (width/2, height);
+  brank[2] = new Branch (width/2, 0);
+  brank[3] = new Branch (0, height/2);
+  brank[4] = new Branch (width, height/2);
+}
+
+void draw() {
+  background(0);
+  frameRate(30);
+
+  brank[1].display(gcounter, l, 0);
+  brank[2].display(gcounter, -l, PI);
+  brank[3].display(gcounter, -l, PI/2);
+  brank[4].display(gcounter, -l, PI/2*3);
+
+  gcounter++;
+
+  if ( frameCount < 50) {
+    gcounter+= 50;
+  }
+
+  if ( frameCount > 50) {
+
+    //for (int i=5; i<brank.length; i++) {
+    //  //brank array setup
+    //  //brank[i] = new Branch ( random(0, width), random(0, height), angle[int(random(angle.length))] );
+    //  brank[i] = new Branch ( random(0, width), random(0, height) );
+
+    //  //brank display setup
+    //  brank[i].display(gcounter, l, random(0, PI*2 -1) );
+    //}
+
+    gcounter++;
+  }
+  
+  if (frameCount > 200) {
+    gcounter+= 100;
+  }
+
+  println( frameCount);
+
+  //img for vid
+  if (frameCount < 300) {
+    saveFrame("images/proj2-######.png");
+  } else {
+    exit();
+  }
+}
+
+
+
+
+class Branch {
+
+  float theta;   
+
+  float counter = 0.0;
+  float locX;
+  float locY;
+  int count = 0;
+
+
+
+
+  Branch(float tempXloc, float tempYloc) {
+
+    locX =  tempXloc;
+    locY =  tempYloc;
+  }
+
+
+  void display(float c, float l, float drAngle) {
+
+    //draw setup
+    stroke(255, 255, 0);
+    noFill();
+    ellipseMode(CENTER);
+    rectMode(CENTER);
+
+
+    //Blooming mechanics
+    float a = (counter / (float) width) * 90f;
+    // Convert it to radians
+    theta = radians(a);
+
+
+    //draw trunk
+    push();
+    // Start the tree from the bottom of the screen
+    translate(locX, locY);
+    rotate(drAngle);
+    // Draw a line 120 pixels
+    line(0, 0, 0, l);
+    ellipse(0, 0, l, l);
+    rect(0, 0, l, l);
+
+    // Move to the end of that line
+    translate(0, -120);
+    // Start the recursive branching!
+    branch(120, 2);
+
+    pop();
+
+
+    counter = c;
+  }
+
+
+
+
+  void branch(float h, float size) {
+    // Each branch will be 2/3rds the size of the previous one
+    h *= 0.66;
+    ellipseMode(CENTER);
+    rectMode(CENTER);
+
+    stroke(255, 255, 0);
+    noFill();
+
+
+    // All recursive functions must have an exit condition!!!!
+    // Here, ours is when the length of the branch is 2 pixels or less
+    if (h > 2) {
+      push();    // Save the current state of transformation (i.e. where are we now)
+      rotate(theta);   // Rotate by theta
+      line(0, 0, 0, -h);  // Draw the branch
+      ellipse(0, 0, h, h);
+      rect(0, 0, h/2, h/2);
+
+      translate(0, -h); // Move to the end of the branch
+      branch(h, size);       // Ok, now call myself to draw two new branches!!
+      pop();     // Whenever we get back here, we "pop" in order to restore the previous matrix state
+
+
+      // Repeat the same thing, only branch off to the "left" this time!
+      push();
+      rotate(-theta);
+      line(0, 0, 0, -h);
+      translate(0, -h);
+      ellipse(0, 0, h, h);
+      rect(0, 0, h/2, h/2);
+
+      branch(h, size);
+      pop();
+    }
+  }
+}
