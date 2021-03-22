@@ -13,7 +13,7 @@
   /* Make the image fully responsive */
   /* carousel setting */
   .carousel-inner img {
-    width: 800px;
+    width: 100%;
     height: 100%;
   }
 
@@ -23,9 +23,10 @@
     width: 50%
   } */
   video {
-  width: 800px;
+  width: 100%;
   max-height: 800px;
 }
+
 img {
   width: auto;
   max-height: 100%;
@@ -98,7 +99,11 @@ body {font-family: Comic-san, Helvetica, sans-serif;}
         <!-- caption -->
         <div class="carousel-caption">
           <h3 style="color: grey; text-align:center">Bee</h3>
-          <p style="color: grey; text-align:center">For the 1st project in Art 103, my group decided to do a laser cut wood puzzle about bee. This is my depiction of bee. The work was done in Illustrator.</p>
+        </div>
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8"><p style="color: grey; text-align:center">For the 1st project in Art 103, my group decided to do a laser cut wood puzzle about bee. This is my depiction of bee. The work was done in Illustrator.</p></div>
+          <div class="col-sm-2"></div>
         </div>
       </div>
 
@@ -213,6 +218,12 @@ body {font-family: Comic-san, Helvetica, sans-serif;}
 
   </div>
 </div>
+
+<script>
+$('.carousel').carousel({
+  interval: false
+})
+</script>
 
 
 </body>
