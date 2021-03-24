@@ -1,29 +1,42 @@
-char currentkey = '1';
-int bRad = 5;
-int pulseOpa = 5;
+var currentkey;
+var bRad;
+var pulseOpa;
 
 //color setup
-color bg = color(255);
-color rd = color(255, 0, 0);
-color yl = color(255, 255, 0);
-color bl = color(0, 0, 255);
+var bg;
+var rd;
+var yl;
+var bl;
 
 
-void setup () {
-  size(1200, 1200);
-  background(bg);
+function setup () {
+  createCanvas(1200, 1200);
+
   smooth();
-  
+
+
+  currentkey = '1';
+  bRad = 5;
+  pulseOpa = 5;
+
+  bg = color(255);
+  rd = color(255, 0, 0);
+  yl = color(255, 255, 0);
+  bl = color(0, 0, 255);
+
+
+  background(bg);
+
 }
 
-void draw () {  
+function draw () {
   //clear page function
-  if (keyPressed) {
+  if (keyIsPressed) {
     clearPrint();
   }
 
   //triggering the newkeychoice
-  if (mousePressed) {
+  if (mouseIsPressed) {
     chooseBrushes();
   }
 
@@ -35,72 +48,75 @@ void draw () {
   //}
 }
 
-//CREATE*** 
+//CREATE***
 //MANY******
 //BRUSHES****
-void chooseBrushes() {
-  char currentkey = key;
+function chooseBrushes() {
+  var currentkey = key;
 
   switch(currentkey) {
-  case '1':
-    //pen    
+    case '1':
+    //pen
     drawLine(1);
     break;
 
-  case '2':
-    //big pen   
+    case '2':
+    //big pen
     drawLine(5);
     break;
 
-  case '3':
-    //brush     
+    case '3':
+    //brush
     normalBrush();
     break;
 
-  case '4':
-    //eraser  
+    case '4':
+    //eraser
     eraser();
     break;
 
-  case '5':
-    //SMALL random drips of paint 
+    case '5':
+    //SMALL random drips of paint
     randomDrips (20, 255, 255, 255, 175);
-    break;  
+    break;
 
-  case '6':
-    //random drips of paint  
+    case '6':
+    //random drips of paint
     randomDrips(100, 175, 200, 150, 0);
     break;
 
-  case '7':
+    case '7':
     //atom stamp
     atomStamp();
     break;
 
-  case 'r':
+    case 'r':
     //red water color
     //var: color and opacity
-    waterColor(rd, 5);    
+    waterColor(255, 0 , 0, 5);
+    // waterColor(rd, 5);
     break;
 
-  case 'y':
+    case 'y':
     //red water color
     //var: color and opacity
-    waterColor(yl, 5);    
+    waterColor(255, 255, 0, 5);
+    // waterColor(yl, 5);
     break;
 
-  case 'b':
+    case 'b':
     //red water color
     //var: color and opacity
-    waterColor(bl, 3);    
+    waterColor(0, 0, 255, 3);
+    // waterColor(bl, 3);
     break;
 
-  case '8':
-    //clock line     
+    case '8':
+    //clock line
     break;
 
-  case '9':
-    //disintegrated line     
+    case '9':
+    //disintegrated line
     break;
   }
 }
@@ -109,16 +125,16 @@ void chooseBrushes() {
 //FOR
 //APP
 
-void drawLine(int t) {
+function drawLine( t) {
 
   push();
   strokeWeight(t);
   stroke(0);
-  line(mouseX, mouseY, pmouseX, pmouseY);  
+  line(mouseX, mouseY, pmouseX, pmouseY);
   pop();
 }
 
-void eraser () {
+function eraser () {
 
   push();
   ellipseMode(CENTER);
@@ -130,7 +146,7 @@ void eraser () {
 }
 
 
-void normalBrush () {
+function normalBrush () {
   //your typical brush
 
   push();
@@ -142,7 +158,7 @@ void normalBrush () {
 
   if (bRad < 10) {
     bRad++;
-  } 
+  }
   if (bRad == 10 || bRad > 10) {
     bRad = 0;
   }
@@ -150,15 +166,17 @@ void normalBrush () {
 }
 
 
-void waterColor(int c, int opa) {
+function waterColor( c1, c2, c3,  opa) {
+// function waterColor( c,  opa) {
   noStroke();
   //stroke(1);
-  fill(c, opa);
+  fill(c1, c2, c3, opa);
+  // fill(c, opa);
   ellipseMode(CENTER);
   ellipse(mouseX, mouseY, 100, 100);
 }
 
-void randomDrips (int r, int rd, int gr, int bl, int low) {
+function randomDrips ( r,  rd,  gr,  bl,  low) {
   //int r determine the size of the brush stroke
   //this brush will fill the area with random ellipses; the area of effect is determined by the integer r.
 
@@ -174,7 +192,7 @@ void randomDrips (int r, int rd, int gr, int bl, int low) {
 }
 
 
-void atomStamp () {
+function atomStamp () {
   //this brush acts like a stamp
   //you cannot draw it consecutively
   //integer r determine the size of the atom shape and its halo; the halo is always larger than the atom
@@ -182,14 +200,14 @@ void atomStamp () {
 
   push();
 
-  color lightBl = color (135, 206, 250);
-  color blVio = color(138, 43, 226);  
+  var lightBl = color (135, 206, 250);
+  var blVio = color(138, 43, 226);
   noStroke();
   fill(lightBl);
 
   //atom
   ellipseMode(CENTER);
-  //1st ellipse  
+  //1st ellipse
   ellipse(mouseX, mouseY, 5, 50);
   //2nd
   push();
@@ -229,7 +247,7 @@ void atomStamp () {
 
   if (pulseOpa < 50) {
     pulseOpa++;
-  } 
+  }
   if (pulseOpa == 50 || pulseOpa > 50) {
     pulseOpa = 0;
   }
@@ -241,7 +259,7 @@ void atomStamp () {
 
 
 //clear or print function
-void clearPrint() {
+function clearPrint() {
   if (key == 'n' || key == 'N') {
     background(bg);
   } else if (key == 'p' || key == 'P') {
