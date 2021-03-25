@@ -1,0 +1,89 @@
+int count = 50;
+int frame = 40;
+float rev1 = PI;
+float rev2 = PI/4*5;
+int counter = 0;
+
+float[] posX = new float[count]; 
+float[] posY = new float[count];
+float[] speedX = new float[count];
+float[] speedY = new float[count];
+float[] sizeW = new float[count];
+float[] sizeH = new float[count];
+int[] colors = new int[count];
+float[] scalez = new float[count];
+//5 new arrays
+float[] rot = new float[count];
+float[] faceSize = new float[count];
+float[] eyeW = new float[count];
+float[] eyeH = new float[count];
+float[] opa = new float[count];
+color[] cl = new color[count];
+float[] status = new float[count];
+
+
+
+void setup() { 
+  size(1000, 1000);
+  for (int i=0; i < posX.length; i++) { 
+    posX[i] = width/2; 
+    posY[i] = height/2; 
+    speedX[i] = random(-5, 5); 
+    speedY[i] = random(-5, 5); 
+    sizeW[i] = random(5, 50); 
+    sizeH[i] = random(5, 50); 
+    scalez[i] = random(.25, 2);
+    //5 new arrays
+    rot[i] = random(0, 3.14);
+    eyeW[i] = random (10, 30);
+    eyeH[i] = random (1, 10);
+    opa[i] = random (5, 50);
+    cl[i] = color( random(0, 255), random(0, 255), random(0, 255) );
+
+  }
+} 
+void draw() { 
+  background(255); 
+
+
+  for (int i = 0; i < posX.length; i++) { 
+    //update all positions 
+    posX[i] += speedX[i]; 
+    posY[i] += speedY[i]; 
+ 
+    fill(cl[i], opa[i]); 
+
+    sface(posX[i], posY[i], scalez[i], eyeW[i], eyeH[i], opa[i], cl[i]);
+
+
+    if (posX[i] < frame+sizeW[i]/2 || posX[i] > (width-frame)-sizeW[i]/2 ) { 
+      speedX[i] = -speedX[i];
+    } 
+    if (posY[i] < frame+sizeW[i]/2 || posY[i] > (height-frame)-sizeW[i]/2) { 
+      speedY[i] = -speedY[i];
+    }
+  }
+  
+  ////img for vid
+  //if (frameCount < 201) {
+  //  saveFrame("images/exer4-######.png");
+  //} else {
+  //  exit();
+  //}
+  
+} 
+
+
+
+void sface(float lox, float loy, float sz, float eyeW, float eyeH, float opa, float cl) {
+  
+  push();
+  
+  translate(lox, loy);
+  scale(sz);
+  ellipse(0, 0, 60, 60);
+  rect(10, -10, eyeW, eyeH);
+  rect(-20, -10, eyeW, eyeH);
+
+  pop();
+}
