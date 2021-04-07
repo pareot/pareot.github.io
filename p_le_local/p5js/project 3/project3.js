@@ -83,7 +83,7 @@ function plClock() {
 
   //draw face
   plCir(width/2, height/2 +k, width/2 -h*2 - hr, height/2 -h*2 - hr, wt, 255);
-  plCir(width/2, height/2 +k, width/2 -k, height/2 -k, 0, 200);
+  plCir(width/2, height/2 +k, width/2 -k -hr, height/2 -k -hr, 0, 200);
 
   //scaling
   push();
@@ -101,6 +101,17 @@ function plClock() {
   //draw smaller, white circle
   rotate(se);
   plCir(0, +20, width/2 -k*r -10, height/2 -k*r -10, wt, 255);
+
+  //mechanic for hour arm
+  for (let i = 0; i <= 200; i++) {
+    if ( (counter % 60) == 0) {
+      rev2--;
+      counter = 0;
+    } else {
+      counter++;
+      rev2+=0;
+    }
+  }
   pop();
 
   //draw deco - sun
