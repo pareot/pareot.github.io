@@ -54,10 +54,6 @@ function plClock() {
   let bl = color(0, 0, 255);
   let lm = color(255, 250, 205);
 
-  let hr = hour();
-  let mi = minute();
-  let se = second();
-
 
   //draw a square as bg
   //plRect(width/2, height/2, width, height, lm, 255);
@@ -82,7 +78,7 @@ function plClock() {
   pop();
 
   //draw face
-  plCir(width/2, height/2 +k, width/2 -h*2 - hr, height/2 -h*2 - hr, wt, 255);
+  plCir(width/2, height/2 +k, width/2 -h*2, height/2 -h*2, wt, 255);
   plCir(width/2, height/2 +k, width/2 -k, height/2 -k, 0, 200);
 
   //scaling
@@ -91,10 +87,29 @@ function plClock() {
   scale(1, 0.5);
   plCir(0, 0, -k, -k, 0, 255);
   plCir(0, 0, -k-10, -k -10, lm, 200);
+  //scale(0.2);
+  //plArms(0, 0, 100, 100, 15, 0);
+  //plArms(0, 0, 100, 100, 15, PI/4);
+  //plArms(0, 0, 100, 100, 15, PI/2);
+  //plArms(0, 0, 100, 100, 15, PI/4*3);
+  //plArms(0, 0, 100, 100, 15, PI);
+  //plArms(0, 0, 100, 100, 15, PI/4*5);
+  //plArms(0, 0, 100, 100, 15, PI/4*6);
+  //plArms(0, 0, 100, 100, 15, PI/4*7);
+  scale(0.5);
+  plNums("TWELVES", 0, 0 -h, 0);
+  plNums("SIX", 0, 0 +h, 0);
+  plNums("THREE", 0 +h, 0, 0);
+  plNums("NINE", 0 -h, 0, 0);
   pop();
 
   //draw numbers display
   textAlign(CENTER, CENTER);
+  plNums("TWELVES", width/2, height/2 -k +h, 255);
+  plNums("WELVE", width/2, height/2 -k + h*2, 255);
+  plNums("SIX", width/2, height/2 +k*3 -h, 255);
+  plNums("THREE", width/2 +k + h, height/2 +k, 255);
+  plNums("NINE", width/2 -k -h, height/2 +k, 255);
 
   //draw rotating arms
   //minute arm
@@ -107,13 +122,14 @@ function plClock() {
   //hour arm
   push();
   translate(width/2, height/2 +k);
-  plArms(0, 0, 50 +k/7, 50 +k/7, 7, mi);
+  plArms(0, 0, 50 +k/7, 50 +k/7, 7, rev2);
   //draw blue circle
   translate(50 +k/7 -10, 50 +k/7 -10);
   plCir(0, 0, width/2 -k*r -3, height/2 -k*r -3, bl, 255);
 
   //draw smaller, white circle
-  rotate(se);
+  rotate(rev3);
+  //plArms(0, 0,   0, +20,   3, rev3);
   plCir(0, +20, width/2 -k*r -10, height/2 -k*r -10, wt, 255);
   rev3--;
 
@@ -192,8 +208,7 @@ function plNums(s,  locx,  locy,  n) {
 
 function plArms ( xpos1,  ypos1,  xpos2,  ypos2,  stWei,  theta) {
   rotate(0 +theta);
-  // strokeWeight(stWei);
-  // stroke(255);
-  noStroke();
+  strokeWeight(stWei);
+  stroke(255);
   line(0 +xpos1, 0 +ypos1, 0 +xpos2, 0 +ypos2);
 }
