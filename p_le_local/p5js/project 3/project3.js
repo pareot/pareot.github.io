@@ -93,40 +93,14 @@ function plClock() {
   plCir(0, 0, -k-10, -k -10, lm, 200);
   pop();
 
-  //draw numbers display
-  textAlign(CENTER, CENTER);
-
-  //draw rotating arms
-  //minute arm
-  push();
-  translate(width/2, height/2 +k);
-  plArms(0, 0, 50 +k/2, 50 +k/2, 5, rev1);
-  rev1++;
-  pop();
-
   //hour arm
   push();
-  translate(width/2, height/2 +k);
-  plArms(0, 0, 50 +k/7, 50 +k/7, 7, mi);
-  //draw blue circle
-  translate(50 +k/7 -10, 50 +k/7 -10);
+  translate(width/2 + 40 +k/7, height/2 +k + 40 +k/7);
   plCir(0, 0, width/2 -k*r -3, height/2 -k*r -3, bl, 255);
 
   //draw smaller, white circle
   rotate(se);
   plCir(0, +20, width/2 -k*r -10, height/2 -k*r -10, wt, 255);
-  rev3--;
-
-  //mechanic for hour arm
-  for (let i = 0; i <= 200; i++) {
-    if ( (counter % 60) == 0) {
-      rev2--;
-      counter = 0;
-    } else {
-      counter++;
-      rev2+=0;
-    }
-  }
   pop();
 
   //draw deco - sun
