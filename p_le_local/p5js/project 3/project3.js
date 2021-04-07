@@ -22,10 +22,6 @@ function setup () {
   rev2 = PI/4*5;
   rev3 = PI;
 
-  //create font
-  f = loadFont ('Webdings');
-  //set font for drawing
-  textFont('Webdings');
 
   noStroke();
   fill(255);
@@ -53,7 +49,8 @@ function plClock() {
   let yl = color(255, 255, 0);
   let bl = color(0, 0, 255);
   let lm = color(255, 250, 205);
-  let rd = color(255, 0, 0);
+  let rd = color (255, 0, 0);
+
 
   let hr = hour();
   let mi = minute();
@@ -61,12 +58,11 @@ function plClock() {
 
 
   //draw a square as bg
-  if ( hr >= 19  ||  hr <= 6 ) {
-    plRect(width/2, height/2, width, height, bl, 255);
+  if ( h >= 19  ||  h <= 6 ) {
+  plRect(width/2, height/2, width, height, yl, 255);
   } else {
-    plRect(width/2, height/2, width, height, yl, 255);   
+    plRect(width/2, height/2, width, height, bl, 255);
   }
-
 
 
   //draw clock's body
@@ -88,8 +84,8 @@ function plClock() {
   pop();
 
   //draw face
-  plCir(width/2, height/2 +k, width/2 -h*2 - hr, height/2 -h*2 - hr, wt, 255);
-  plCir(width/2, height/2 +k, width/2 -k -hr, height/2 -k -hr, 0, 200);
+  plCir(width/2, height/2 +k, width/2 -h*2, height/2 -h*2, wt, 255);
+  plCir(width/2, height/2 +k, width/2 -k, height/2 -k, 0, 200);
 
   //scaling
   push();
@@ -99,14 +95,27 @@ function plClock() {
   plCir(0, 0, -k-10, -k -10, lm, 200);
   pop();
 
+  //draw rotating arms
+  //minute arm
+  push();
+  translate(width/2, height/2 +k);
+  plArms(0, 0, 50 +k/2, 50 +k/2, 5, rev1);
+  rev1++;
+  pop();
+
   //hour arm
   push();
-  translate(width/2 + 40 +k/7, height/2 +k + 40 +k/7);
+  translate(width/2, height/2 +k);
+  plArms(0, 0, 50 +k/7, 50 +k/7, 7, mi);
+  //draw blue circle
+  translate(50 +k/7 -10, 50 +k/7 -10);
   plCir(0, 0, width/2 -k*r -3, height/2 -k*r -3, bl, 255);
 
   //draw smaller, white circle
   rotate(se);
+  //plArms(0, 0,   0, +20,   3, rev3);
   plCir(0, +20, width/2 -k*r -10, height/2 -k*r -10, wt, 255);
+  rev3--;
 
   //mechanic for hour arm
   for (let i = 0; i <= 200; i++) {
@@ -121,14 +130,15 @@ function plClock() {
   pop();
 
   //draw deco - sun
-  //change sun
-  if ( hr >= 19  ||  hr <= 6 ) {
-    plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, wt, 200);
-    plCir(width/2, height/2 +k, width/2 -k*r, height/2 -k*r, wt, 255);
+  //change sun accordingly to moon
+  if ( h >= 19  ||  h <= 6 ) {
+  plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, yl, 200);
+  plCir(width/2, height/2 +k, width/2 -k*r, height/2 -k*r, rd, 255);
   } else {
-    plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, rd, 200);
-    plCir(width/2, height/2 +k, width/2 -k*r, height/2 -k*r, yl, 255);
+    plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, bl, 200);
+  plCir(width/2, height/2 +k, width/2 -k*r, height/2 -k*r, wt, 255);
   }
+
 
 
   //draw roof's cast shadow
@@ -148,13 +158,10 @@ function plClock() {
   rotate(PI/4);
   plQd(0, 0,    350, 0,    300, 50,   0, 50,    br, 255);
   pop();
-
-
-
 }
 
-//*****************
-//custom functions
+  //*****************
+ //custom functions
 //****************
 
 //draw a triangle roof
