@@ -53,6 +53,7 @@ function plClock() {
   let yl = color(255, 255, 0);
   let bl = color(0, 0, 255);
   let lm = color(255, 250, 205);
+  let rd = color(255, 0, 0);
 
   let hr = hour();
   let mi = minute();
@@ -60,7 +61,7 @@ function plClock() {
 
 
   //draw a square as bg
-  //plRect(width/2, height/2, width, height, lm, 255);
+  plRect(width/2, height/2, width, height, lm, 255);
 
 
   //draw clock's body
@@ -115,8 +116,14 @@ function plClock() {
   pop();
 
   //draw deco - sun
-  plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, yl, 200);
+  plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, rd, 200);
   plCir(width/2, height/2 +k, width/2 -k*r, height/2 -k*r, yl, 255);
+
+  if ( h >= 19  ||  h <= 6 ) {
+
+ } else {
+
+ }
 
 
   //draw roof's cast shadow

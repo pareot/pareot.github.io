@@ -53,10 +53,15 @@ function plClock() {
   let yl = color(255, 255, 0);
   let bl = color(0, 0, 255);
   let lm = color(255, 250, 205);
+  let rd = color(255, 0, 0);
+
+  let hr = hour();
+  let mi = minute();
+  let se = second();
 
 
   //draw a square as bg
-  //plRect(width/2, height/2, width, height, lm, 255);
+  plRect(width/2, height/2, width, height, lm, 255);
 
 
   //draw clock's body
@@ -78,8 +83,8 @@ function plClock() {
   pop();
 
   //draw face
-  plCir(width/2, height/2 +k, width/2 -h*2, height/2 -h*2, wt, 255);
-  plCir(width/2, height/2 +k, width/2 -k, height/2 -k, 0, 200);
+  plCir(width/2, height/2 +k, width/2 -h*2 - hr, height/2 -h*2 - hr, wt, 255);
+  plCir(width/2, height/2 +k, width/2 -k -hr, height/2 -k -hr, 0, 200);
 
   //scaling
   push();
@@ -87,51 +92,16 @@ function plClock() {
   scale(1, 0.5);
   plCir(0, 0, -k, -k, 0, 255);
   plCir(0, 0, -k-10, -k -10, lm, 200);
-  //scale(0.2);
-  //plArms(0, 0, 100, 100, 15, 0);
-  //plArms(0, 0, 100, 100, 15, PI/4);
-  //plArms(0, 0, 100, 100, 15, PI/2);
-  //plArms(0, 0, 100, 100, 15, PI/4*3);
-  //plArms(0, 0, 100, 100, 15, PI);
-  //plArms(0, 0, 100, 100, 15, PI/4*5);
-  //plArms(0, 0, 100, 100, 15, PI/4*6);
-  //plArms(0, 0, 100, 100, 15, PI/4*7);
-  scale(0.5);
-  plNums("TWELVES", 0, 0 -h, 0);
-  plNums("SIX", 0, 0 +h, 0);
-  plNums("THREE", 0 +h, 0, 0);
-  plNums("NINE", 0 -h, 0, 0);
-  pop();
-
-  //draw numbers display
-  textAlign(CENTER, CENTER);
-  plNums("TWELVES", width/2, height/2 -k +h, 255);
-  plNums("WELVE", width/2, height/2 -k + h*2, 255);
-  plNums("SIX", width/2, height/2 +k*3 -h, 255);
-  plNums("THREE", width/2 +k + h, height/2 +k, 255);
-  plNums("NINE", width/2 -k -h, height/2 +k, 255);
-
-  //draw rotating arms
-  //minute arm
-  push();
-  translate(width/2, height/2 +k);
-  plArms(0, 0, 50 +k/2, 50 +k/2, 5, rev1);
-  rev1++;
   pop();
 
   //hour arm
   push();
-  translate(width/2, height/2 +k);
-  plArms(0, 0, 50 +k/7, 50 +k/7, 7, rev2);
-  //draw blue circle
-  translate(50 +k/7 -10, 50 +k/7 -10);
+  translate(width/2 + 40 +k/7, height/2 +k + 40 +k/7);
   plCir(0, 0, width/2 -k*r -3, height/2 -k*r -3, bl, 255);
 
   //draw smaller, white circle
-  rotate(rev3);
-  //plArms(0, 0,   0, +20,   3, rev3);
+  rotate(se);
   plCir(0, +20, width/2 -k*r -10, height/2 -k*r -10, wt, 255);
-  rev3--;
 
   //mechanic for hour arm
   for (let i = 0; i <= 200; i++) {
@@ -146,8 +116,14 @@ function plClock() {
   pop();
 
   //draw deco - sun
-  plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, yl, 200);
+  plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, rd, 200);
   plCir(width/2, height/2 +k, width/2 -k*r, height/2 -k*r, yl, 255);
+
+  if ( h >= 19  ||  h <= 6 ) {
+
+ } else {
+
+ }
 
 
   //draw roof's cast shadow
@@ -208,7 +184,8 @@ function plNums(s,  locx,  locy,  n) {
 
 function plArms ( xpos1,  ypos1,  xpos2,  ypos2,  stWei,  theta) {
   rotate(0 +theta);
-  strokeWeight(stWei);
-  stroke(255);
+  // strokeWeight(stWei);
+  // stroke(255);
+  noStroke();
   line(0 +xpos1, 0 +ypos1, 0 +xpos2, 0 +ypos2);
 }
