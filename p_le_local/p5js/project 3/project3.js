@@ -61,7 +61,12 @@ function plClock() {
 
 
   //draw a square as bg
-  plRect(width/2, height/2, width, height, lm, 255);
+  if ( hr >= 19  ||  hr <= 6 ) {
+    plRect(width/2, height/2, width, height, lm, 255);
+  } else {
+    plRect(width/2, height/2, width, height, bl, 255);   
+  }
+
 
 
   //draw clock's body
@@ -117,17 +122,13 @@ function plClock() {
 
   //draw deco - sun
   //change sun
-  //draw sky
-  //change sky too
   if ( hr >= 19  ||  hr <= 6 ) {
     plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, wt, 200);
-  plCir(width/2, height/2 +k, width/2 -k*r, height/2 -k*r, wt, 255);
-
- } else {
-   plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, rd, 200);
-  plCir(width/2, height/2 +k, width/2 -k*r, height/2 -k*r, yl, 255);
-
- }
+    plCir(width/2, height/2 +k, width/2 -k*r, height/2 -k*r, wt, 255);
+  } else {
+    plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, rd, 200);
+    plCir(width/2, height/2 +k, width/2 -k*r, height/2 -k*r, yl, 255);
+  }
 
 
   //draw roof's cast shadow
@@ -147,10 +148,13 @@ function plClock() {
   rotate(PI/4);
   plQd(0, 0,    350, 0,    300, 50,   0, 50,    br, 255);
   pop();
+
+
+
 }
 
-  //*****************
- //custom functions
+//*****************
+//custom functions
 //****************
 
 //draw a triangle roof
