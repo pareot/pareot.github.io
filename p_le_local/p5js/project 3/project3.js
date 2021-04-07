@@ -62,9 +62,9 @@ function plClock() {
 
   //draw a square as bg
   if ( hr >= 19  ||  hr <= 6 ) {
-    plRect(width/2, height/2, width, height, lm, 255);
+    plRect(width/2, height/2, width, height, bl, 255);
   } else {
-    plRect(width/2, height/2, width, height, bl, 255);   
+    plRect(width/2, height/2, width, height, yl, 255);   
   }
 
 
