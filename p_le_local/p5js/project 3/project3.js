@@ -116,12 +116,16 @@ function plClock() {
   pop();
 
   //draw deco - sun
-  plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, rd, 200);
-  plCir(width/2, height/2 +k, width/2 -k*r, height/2 -k*r, yl, 255);
-
-  if ( h >= 19  ||  h <= 6 ) {
+  //change sun
+  //draw sky
+  //change sky too
+  if ( hr >= 19  ||  hr <= 6 ) {
+    plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, wt, 200);
+  plCir(width/2, height/2 +k, width/2 -k*r, height/2 -k*r, wt, 255);
 
  } else {
+   plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, rd, 200);
+  plCir(width/2, height/2 +k, width/2 -k*r, height/2 -k*r, yl, 255);
 
  }
 
