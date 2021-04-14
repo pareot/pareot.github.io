@@ -14,7 +14,7 @@ function draw() {
   background(0);
 
   translate(width/2, height/2);
-  rotate(-PI/2);
+  rotate(PI/2);
 
   //clock's face
   strokeWeight(8);
@@ -26,6 +26,7 @@ function draw() {
   push();
   strokeWeight(12);
   stroke(255, 100, 150);
+  fill(0, 255, 200);
   let hrEnd = map(hr, 0, 24, 0, 360);
   arc(0, 0, s, s, 0, hrEnd);
   pop();
@@ -34,6 +35,7 @@ function draw() {
   push();
   strokeWeight(12);
   stroke(255, 100, 150);
+  fill(255, 0, 200);
   let miEnd = map(mi, 0, 60, 0, 360);
   arc(0, 0, s/2, s/2, 0, miEnd);
   pop();
@@ -42,6 +44,7 @@ function draw() {
   push();
   strokeWeight(12);
   stroke(255, 100, 150);
+  fill(200, 0, 255);
   let scEnd = map(sc, 0, 60, 0, 360);
   arc(0, 0, s/3, s/3, 0, scEnd);
   pop();
