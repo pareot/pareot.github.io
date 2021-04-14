@@ -18,7 +18,18 @@ var gridarr = [
   [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
 ];
 
+// var gridarr1 = [
+//         [0, 0, 0, 1, 0, 0, 0],
+//         [0, 0, 1, 1, 1, 0, 0],
+//         [0, 1, 1, 1, 1, 1, 0],
+//         [1, 1, 1, 1, 1, 1, 1],
+//         [0, 1, 1, 1, 1, 1, 0],
+//         [0, 0, 1, 1, 1, 0, 0],
+//         [0, 0, 0, 1, 0, 0, 0]
+//         ];
+
 var a = 0;
+// var b = 0;
 
 function setup() {
 
@@ -27,10 +38,29 @@ function setup() {
   background(50, 50, 50);
   textSize(30);
 
-  push();
-  translate (150, 150)
-  rotate(PI/4);
-  pop();
+  // push();
+  // translate (0, 150)
+  // rotate(PI/4);
+  // for (var k = 0; k < gridarr.length; k++) {
+  //
+  //   for (var g = 0; g < gridarr.length; g++) {
+  //     b = gridarr1[k][g];
+  //     if (b == 1) {
+  //       fill(34, 139, 34);
+  //       ellipse((g * 30) + 15, (k * 30) + 15, 30, 30);
+  //       //text("FG",(j * 30) + 15, (i * 30) + 15);
+  //     } else if (b == 0) {
+  //       fill(255, 99 ,71);
+  //       //rect((j * 30) + 15, (i * 30) + 15, 20, 20);
+  //       // text("BG",(j * 30) + 15, (i * 30) + 15);
+  //     } else {
+  //       fill(0, 255, 0);
+  //       ellipse((g * 30) + 15, (k * 30) + 15, 20, 20);
+  //       // text("Beard",(j * 30) + 15, (i * 30) + 15);
+  //
+  //
+  //     }
+  // pop();
 
   push();
   translate(150, 150);
@@ -40,7 +70,7 @@ function setup() {
       a = gridarr[i][j];
       if (a == 1) {
         fill(34, 139, 34);
-        ellipse((j * 30) + 15, (i * 30) + 15, 30, 30);
+        rect((j * 30) + 15, (i * 30) + 15, 30, 30);
         //text("FG",(j * 30) + 15, (i * 30) + 15);
       } else if (a == 0) {
         fill(255, 99 ,71);
@@ -48,7 +78,7 @@ function setup() {
         // text("BG",(j * 30) + 15, (i * 30) + 15);
       } else {
         fill(0, 255, 0);
-        ellipse((j * 30) + 15, (i * 30) + 15, 20, 20);
+        rect((j * 30) + 15, (i * 30) + 15, 20, 20);
         // text("Beard",(j * 30) + 15, (i * 30) + 15);
 
 
