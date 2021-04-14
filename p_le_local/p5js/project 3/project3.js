@@ -112,7 +112,7 @@ function plClock() {
   plCir(0, 0, width/2 -k*r -3, height/2 -k*r -3, bl, 255);
 
   //draw smaller, white circle
-  rotate(se);
+  rotate(se -PI/2);
   //plArms(0, 0,   0, +20,   3, rev3);
   plCir(0, +20, width/2 -k*r -10, height/2 -k*r -10, wt, 255);
   rev3--;
