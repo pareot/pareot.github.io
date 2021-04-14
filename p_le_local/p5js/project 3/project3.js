@@ -29,9 +29,13 @@ function setup () {
   //draw mode
   ellipseMode(CENTER);
   //rectMode(CENTER);
+
+  angleMode(RADIANS);
 }
 
 function draw () {
+  push();
+  translate
   plClock();
 
   ////img for vid
@@ -107,7 +111,7 @@ function plClock() {
   push();
   translate(width/2, height/2 +k);
   plArms(0, 0, 50 +k/7, 50 +k/7, 7, mi);
-  //draw blue circle
+  //draw BLUE circle
   translate(50 +k/7 -10, 50 +k/7 -10);
   plCir(0, 0, width/2 -k*r -3, height/2 -k*r -3, bl, 255);
 
@@ -129,7 +133,7 @@ function plClock() {
   }
   pop();
 
-  //draw deco - sun
+  //draw deco - SUN
   //change sun accordingly to moon
   if ( h >= 19  ||  h <= 6 ) {
   plCir(width/2, height/2 +k, width/2 -k*r +k/2, height/2 -k*r +k/2, yl, 200);
