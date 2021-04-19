@@ -1,8 +1,8 @@
 
 var blob;
 
-var nameList = ["phuc", "cris", "jeff", "lc", "yeab"];
-var jsonList = [0, 1, 2, 3, 4];
+var nameList = ["phuc","cris","jeff", "lc", "yeab"];
+var jsonList = [0, 0, 0, 0];
 
 var whichJ = 0;
 
@@ -81,32 +81,47 @@ function updateToon(obj) {
 
 //switch display
 function keyPressed() {
-  if (key == ' ') {
-    console.log("SPACE");
 
-    if (whichJ === 0) {
-      whichJ =1;
-      blob = jsonList[whichJ];
-    } else if (whichJ === 1) {
-      whichJ =2;
-      blob = jsonList[whichJ];
-    } else if (whichJ === 2) {
-      whichJ =3;
-      blob = jsonList[whichJ];
-    } else if (whichJ === 3) {
-      whichJ =4;
-      blob = jsonList[whichJ];
-    } else {
-      whichJ =0;
-      blob = jsonList[whichJ];
-    }
-  }
+   if ( key == ' ') {
+     console.log("SPACE");
 
-  function drawChosenOne() {
-    var name = nameList[whichJ];
-    fill(0);
-    rect(0, 0, 50, 20);
-    fill(255);
-    text(name, 10, 20);
+  // if (whichJ === 0) { //sd  //Toggle
+  //   whichJ = 1;
+  //   blob = jsonList[whichJ];
+  // } else { // stu
+  //   whichJ = 0;
+  //   blob = jsonList[whichJ];
+  // }
+
+  if (whichJ === 0) { //sd  //Toggle
+    whichJ = 1;
+    blob = jsonList[whichJ];
+  } else if (whichJ === 1)   { // stu
+    whichJ = 2;
+    blob = jsonList[whichJ];
+  } else {
+  } else if (whichJ === 2)   { // stu
+    whichJ = 3;
+    blob = jsonList[whichJ];
+  } else {
+  } else if (whichJ === 3)   { // stu
+    whichJ = 4;
+    blob = jsonList[whichJ];
+  } else {
+    whichJ = 0;
+    blob = jsonList[whichJ];
   }
+}
+
+  console.log(whichJ);
+}
+
+//and how to draw whos data it is
+function drawWhoItIS() {
+  var name = nameList[whichJ];
+  fill(0);
+  rect(0,0,50,20);
+  fill(255);
+  text(name,10,20);
+
 }
