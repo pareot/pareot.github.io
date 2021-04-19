@@ -99,11 +99,9 @@ function keyPressed() {
   } else if (whichJ === 1)   { // stu
     whichJ = 2;
     blob = jsonList[whichJ];
-  } else {
   } else if (whichJ === 2)   { // stu
     whichJ = 3;
     blob = jsonList[whichJ];
-  } else {
   } else if (whichJ === 3)   { // stu
     whichJ = 4;
     blob = jsonList[whichJ];
@@ -114,7 +112,6 @@ function keyPressed() {
 }
 
   console.log(whichJ);
-}
 
 //and how to draw whos data it is
 function drawWhoItIS() {
@@ -124,4 +121,5 @@ function drawWhoItIS() {
   fill(255);
   text(name,10,20);
 
+}
 }
