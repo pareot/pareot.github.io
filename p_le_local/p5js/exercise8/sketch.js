@@ -2,7 +2,7 @@
 var blob;
 
 var nameList = ["phuc","cris","jeff", "lc", "yeab"];
-var jsonList = [0, 0, 0, 0];
+var jsonList = [0, 0, 0, 0, 0];
 
 var whichJ = 0;
 
@@ -28,9 +28,7 @@ function setup() {
   // this shows the whole blob json data package
   console.log(blob);
   noStroke();
-
 }
-
 
 //visual
 function draw() {
@@ -54,7 +52,6 @@ function updateToon(obj) {
   obj.posX += obj.moveX[obj.nextX];
   obj.posY += obj.moveY[obj.nextY];
 
-
   // console.log(obj.posX);
 
   if (obj.posX > width) {
@@ -74,8 +71,57 @@ function updateToon(obj) {
   }
 
   drawToon(obj);
+  pop();
+}
+
+function drawToon(obj) {
+
+  //  console.log(obj.posX[s]);
+
+  push();
+  translate(obj.posX , obj.posY);
+  // head
+  fill(obj.r,obj.g,obj.b);
+  rect(0,20,obj.head,obj.head);
+  // eyes
+  fill(0);
+  ellipse(-10,10,5,5);
+  ellipse(10,10,5,5);
+  //torso
+  fill(obj.r,obj.g,obj.b);
+  ellipse(0,70,obj.torso,obj.torso);
+
+  //tie
+  if(obj.tie == "yes") {
+    fill(0);
+    quad(0, +50, -5, +70, 0, +80, +5, +70);
+  }
+  //hair
+  fill(obj.r -60, obj.g -70, obj.b -20);
+  triangle(-25, 0, 25, 0, 25, +10);
+  triangle(5, 0, -25, 0, -25, +10);
+  //hat
+  if(obj.hat == "yes") {
+    fill(255);
+    rect(0, -30, 20, 15);
+    rect(0, -20, 50, 20);
+  }
+  //shoes
+  fill(165, 42, 42);
+  rect(-15, 100, 20, 10);
+  rect(15, 100, 20, 10);
+  //hands
+  fill(obj.r,obj.g,obj.b);
+  ellipse(-25, 70, 15, 15);
+  ellipse(25, 70, 15, 15);
+
+  //name
+  fill(100, 200, 200);
+  textSize(20);
+  text(obj.name,-20,-40);
 
   pop();
+
 }
 
 
@@ -114,12 +160,12 @@ function keyPressed() {
   console.log(whichJ);
 
 //and how to draw whos data it is
-function drawWhoItIS() {
+function drawChosenOne() {
   var name = nameList[whichJ];
   fill(0);
-  rect(0,0,50,20);
-  fill(255);
-  text(name,10,20);
+  rect(0,50,50,20);
+  fill(255, 200, 200);
+  text(name,20,30);
 
 }
 }
