@@ -7,7 +7,11 @@ var sy = 0;
 
 
 function preload() {
-  blob = loadJSON("ple.json");
+  jsonList[0] = loadJSON("ple.json");
+  jsonList[1] = loadJSON("cris.json");
+  jsonList[2] = loadJSON("jeff.json");
+  jsonList[3] = loadJSON("yeab.json");
+  // blob = loadJSON("ple.json");
 }
 
 function setup() {

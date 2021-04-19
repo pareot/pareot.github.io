@@ -65,6 +65,28 @@
   "moveY":[-2,2],
   "nextX":0,
   "nextY":0
+},
+
+  {
+  "name":"Travolta",
+  "r":147,
+  "g":97,
+  "b":172,
+  "head": 50,
+  "torso": 30,
+  "hat":"yes",
+  "hair":65,
+  "shoes":"yes",
+  "hands": "yes",
+  "legs":"yes",
+  "tie": "yes",
+  "glass": "yes",
+  "posX":30,
+  "posY":30,
+  "moveX":[0,1],
+  "moveY":[-3,3],
+  "nextX":0,
+  "nextY":0
 }
 
 ]
