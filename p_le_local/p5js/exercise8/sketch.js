@@ -1,16 +1,20 @@
 
 var blob;
-
-
 var sx = 0;
 var sy = 0;
+
+var nameList = ["phuc", "cris", "jeff", "lc", "yeab"];
+var jsonList = [0, 1, 2, 3, 4];
+
+var whichJ = 0;
 
 
 function preload() {
   jsonList[0] = loadJSON("ple.json");
   jsonList[1] = loadJSON("cris.json");
   jsonList[2] = loadJSON("jeff.json");
-  jsonList[3] = loadJSON("yeab.json");
+  jsonList[4] = loadJSON("lc.json");
+  jsonList[5] = loadJSON("yeab.json");
   // blob = loadJSON("ple.json");
 }
 
@@ -19,6 +23,8 @@ function setup() {
   background(0);
   rectMode(CENTER);
 
+  blob = jsonList[whichJ];
+
   // this shows the whole blob json data package
   console.log(blob);
   noStroke();
@@ -26,7 +32,7 @@ function setup() {
 }
 
 
-
+//visual
 function draw() {
   background(0);
 
@@ -34,11 +40,7 @@ function draw() {
   updateToon(blob.toons[1]);  // Line
   updateToon(blob.toons[2]);  // Box
   updateToon(blob.toons[3]);  // Peanut
-
-
 }
-
-
 
 function updateToon(obj) {
 
@@ -74,58 +76,37 @@ function updateToon(obj) {
   drawToon(obj);
 
   pop();
-
-
 }
 
 
+//switch display
+function keyPressed() {
+  if (key == ' ') {
+    console.log("SPACE");
 
-function drawToon(obj) {
+    if (whichJ === 0) {
+      whichJ =1;
+      blob = jsonList[whichJ];
+    } else if (whichJ === 1) {
+      whichJ =2;
+      blob = jsonList[whichJ];
+    } else if (whichJ === 2) {
+      whichJ =3;
+      blob = jsonList[whichJ];
+    } else if (whichJ === 3) {
+      whichJ =4;
+      blob = jsonList[whichJ];
+    } else {
+      whichJ =0;
+      blob = jsonList[whichJ];
+    }
+}
 
-  //  console.log(obj.posX[s]);
-
-  push();
-  translate(obj.posX , obj.posY);
-  // head
-  fill(obj.r,obj.g,obj.b);
-  rect(0,20,obj.head,obj.head);
-  // eyes
+function drawChosenOne() {
+  var name = nameList[whichJ];
   fill(0);
-  ellipse(-10,10,5,5);
-  ellipse(10,10,5,5);
-  //torso
-  fill(obj.r,obj.g,obj.b);
-  ellipse(0,70,obj.torso,obj.torso);
-
-  //tie
-  if(obj.tie == "yes") {
-    fill(0);
-    quad(0, +50, -5, +70, 0, +80, +5, +70);
-  }
-  //hair
-  fill(obj.r -60, obj.g -70, obj.b -20);
-  triangle(-25, 0, 25, 0, 25, +10);
-  triangle(5, 0, -25, 0, -25, +10);
-  //hat
-  if(obj.hat == "yes") {
-    fill(255);
-    rect(0, -30, 20, 15);
-    rect(0, -20, 50, 20);
-  }
-  //shoes
-  fill(165, 42, 42);
-  rect(-15, 100, 20, 10);
-  rect(15, 100, 20, 10);
-  //hands
-  fill(obj.r,obj.g,obj.b);
-  ellipse(-25, 70, 15, 15);
-  ellipse(25, 70, 15, 15);
-
-  //name
-  fill(100, 200, 200);
-  textSize(20);
-  text(obj.name,-20,-40);
-
-  pop();
-
+  rect(0, 0, 50, 20);
+  fill(255);
+  text(name, 10, 20);
+}
 }
