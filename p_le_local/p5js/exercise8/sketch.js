@@ -1,20 +1,20 @@
 
 var blob;
-var sx = 0;
-var sy = 0;
 
 var nameList = ["phuc", "cris", "jeff", "lc", "yeab"];
 var jsonList = [0, 1, 2, 3, 4];
 
 var whichJ = 0;
 
+var sx = 0;
+var sy = 0;
 
 function preload() {
   jsonList[0] = loadJSON("ple.json");
   jsonList[1] = loadJSON("cris.json");
   jsonList[2] = loadJSON("jeff.json");
-  jsonList[4] = loadJSON("lc.json");
-  jsonList[5] = loadJSON("yeab.json");
+  jsonList[3] = loadJSON("lc.json");
+  jsonList[4] = loadJSON("yeab.json");
   // blob = loadJSON("ple.json");
 }
 
@@ -100,13 +100,13 @@ function keyPressed() {
       whichJ =0;
       blob = jsonList[whichJ];
     }
-}
+  }
 
-function drawChosenOne() {
-  var name = nameList[whichJ];
-  fill(0);
-  rect(0, 0, 50, 20);
-  fill(255);
-  text(name, 10, 20);
-}
+  function drawChosenOne() {
+    var name = nameList[whichJ];
+    fill(0);
+    rect(0, 0, 50, 20);
+    fill(255);
+    text(name, 10, 20);
+  }
 }
