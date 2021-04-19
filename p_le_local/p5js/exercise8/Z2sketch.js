@@ -3,12 +3,6 @@ var blob;
 var sx = 0;
 var sy = 0;
 
-var nameList = ["me", "cris", "jeff", "lc", "yeab"];
-ver jsonList = [0, 1, 2, 3, 4];
-
-var whichJ = 0;
-
-
 function preload() {
   blob = loadJSON("ple.json");
 }
