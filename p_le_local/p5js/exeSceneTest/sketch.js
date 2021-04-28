@@ -11,11 +11,11 @@ function preload() {
   snd4 = loadSound("sounds/crack.mp3");
   snd5 = loadSound("sounds/fourTap.mp3");
 
-  img1 = loadImage("img/map.jpg");
-  img2 = loadImage("img/map1.jpg");
-  img3 = loadImage("img/map2.jpg");
-  img4 = loadImage("img/map3.png");
-  img5 = loadImage("img/room.png");
+  img1 = loadImage("img/room.png");
+  img2 = loadImage("img/map.jpg");
+  img3 = loadImage("img/map1.jpg");
+  img4 = loadImage("img/map2.jpg");
+  img5 = loadImage("img/map3.png");
 }
 
 // global manager object

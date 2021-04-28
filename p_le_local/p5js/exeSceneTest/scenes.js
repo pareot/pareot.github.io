@@ -270,6 +270,7 @@ function scene4() {
     this.enter = function()  {
         snd1.pause();
         snd2.pause();
+        snd3.pause();
 
         let loy= 255;
         console.log("We are entering scene4");
@@ -277,9 +278,9 @@ function scene4() {
 
       //  snd2.loop();
 
-        if (snd4.isPlaying()) {
+        if (snd3.isPlaying()) {
         // .isPlaying() returns a boolean
-            snd4.pause(); // .play() will resume from .pause() position
+            snd3.pause(); // .play() will resume from .pause() position
         //  background(255, 0, 0);
         } else {
             snd4.play();
@@ -301,6 +302,98 @@ function scene4() {
        translate(width/2,loy*3);
        fill(100, 255, 250);
        text("Scene 4 works...", 0, 100);
+       text("Click to Continue", 0, 150);
+       // ellipse(0,0,30,30);
+       if (loy < 0) {
+         loy = 255;
+       } else {
+         loy--;
+       }
+       //
+       pop();
+    }
+
+
+    //moving to next scene
+    this.mousePressed = function()
+    {
+
+      //console.log("exit");
+      this.sceneManager.showNextScene();
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////// 5 /////////////////
+
+function scene5() {
+
+  let loy= 255;
+
+    this.setup = function()  {
+        console.log("We are at setup for scene5");
+
+    }
+
+    this.enter = function()  {
+        snd1.pause();
+        snd2.pause();
+        snd3.pause();
+        snd4.pause();
+
+        let loy= 255;
+        console.log("We are entering scene4");
+
+
+      //  snd2.loop();
+
+        if (snd4.isPlaying()) {
+        // .isPlaying() returns a boolean
+            snd4.pause(); // .play() will resume from .pause() position
+        //  background(255, 0, 0);
+        } else {
+            snd5.play();
+          //background(0, 255, 0);
+        }
+    }
+
+    this.draw = function() {
+      background(0,0,255-loy);
+      image(img5,0,0,width,height);
+
+       textAlign(CENTER);
+       textSize(29);
+       // fill(200,0,0);
+
+
+       push();
+       //
+       translate(width/2,loy*3);
+       fill(100, 255, 250);
+       text("Scene 5 works...", 0, 100);
        text("Click to Continue", 0, 150);
        // ellipse(0,0,30,30);
        if (loy > 255) {
