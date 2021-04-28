@@ -1,39 +1,34 @@
-
-// This contains the use of both Scenemanager and P5.play
-// Documentation and additional examples of these libraries can be found at:
-//https://github.com/mveteanu/p5.SceneManager
-//http://molleindustria.github.io/p5.play/
-
-
-var image1_up, image2_over,snd1;
+var snd1,snd2,snd3;
+var img1,img2,img3;
 // var duration;
 // var  slideWidth = 500;
 
 function preload() {
 
-  // snd1 = loadSound("sound/troll.mp3");
+  snd1 = loadSound("sounds/crack.mp3");
+  snd2 = loadSound("sounds/fourTap.mp3");
+  snd3 = loadSound("sounds/oneTap.mp3");
 
-
+  img1 = loadImage("img/map.jpg");
+  img2 = loadImage("img/map1.jpg");
+  img3 = loadImage("img/map2.jpg");
+  img4 = loadImage("img/map3.png");
+  img5 = loadImage("img/room.png");
 }
-
-
-// define your p5.play sprites as global objects first.
-var ghosty;
-
 
 // global manager object
 var mgr;
 
 function setup() {
     createCanvas(800, 800);
-  //  console.log(hell);
-
      mgr = new SceneManager();
     // Preload scenes. Preloading is normally optional
     // ... but needed if showNextScene() is used.
-    mgr.addScene (scene1);
+    mgr.addScene (intro);
     mgr.addScene (scene2);
     mgr.addScene (scene3);
+    mgr.addScene (scene4);
+    // mgr.addScene (scene5);
     mgr.showNextScene();
 
 }
@@ -76,14 +71,11 @@ function keyPressed()
         case '3':
             mgr.showScene( scene3 );
             break;
-        case 'h':
-            mgr.showScene( scene3 );
+        case '4':
+            mgr.showScene( scene4 );
             break;
-        case 'H':
-            mgr.showScene( scene3 );
-            break;
-         case 'P':
-            mgr.showScene( scene3 );
+         case '5':
+            mgr.showScene( scene5 );
             break;
     }
 
