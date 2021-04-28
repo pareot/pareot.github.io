@@ -8,6 +8,8 @@ function preload() {
   snd1 = loadSound("sounds/crack.mp3");
   snd2 = loadSound("sounds/fourTap.mp3");
   snd3 = loadSound("sounds/oneTap.mp3");
+  snd4 = loadSound("sounds/crack.mp3");
+  snd5 = loadSound("sounds/fourTap.mp3");
 
   img1 = loadImage("img/map.jpg");
   img2 = loadImage("img/map1.jpg");
@@ -28,7 +30,7 @@ function setup() {
     mgr.addScene (scene2);
     mgr.addScene (scene3);
     mgr.addScene (scene4);
-    // mgr.addScene (scene5);
+    // mgr.addScene (scene53);
     mgr.showNextScene();
 
 }
