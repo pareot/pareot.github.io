@@ -22,7 +22,7 @@ function preload() {
 var mgr;
 
 function setup() {
-    createCanvas(800, 800);
+    createCanvas(1000, 800);
      mgr = new SceneManager();
     // Preload scenes. Preloading is normally optional
     // ... but needed if showNextScene() is used.
@@ -30,7 +30,7 @@ function setup() {
     mgr.addScene (scene2);
     mgr.addScene (scene3);
     mgr.addScene (scene4);
-    // mgr.addScene (scene53);
+    mgr.addScene (scene5);
     mgr.showNextScene();
 
 }

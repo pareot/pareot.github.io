@@ -385,22 +385,21 @@ function scene5() {
       image(img5,0,0,width,height);
 
        textAlign(CENTER);
-       textSize(29);
+       textSize(40);
        // fill(200,0,0);
 
 
        push();
        //
-       translate(width/2,loy*3);
+       translate(width/2,height/2);
        fill(100, 255, 250);
        text("Scene 5 works...", 0, 100);
        text("Click to Continue", 0, 150);
-       // ellipse(0,0,30,30);
-       if (loy > 255) {
-         loy = 0;
-       } else {
-         loy++;
-       }
+       // if (loy > 255) {
+       //   loy = 0;
+       // } else {
+       //   loy++;
+       // }
        //
        pop();
     }
