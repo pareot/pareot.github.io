@@ -65,7 +65,7 @@ function keyPressed()
     switch(key)
     {
         case '1':
-            mgr.showScene( scene1 );
+            mgr.showScene( intro );
             break;
         case '2':
             mgr.showScene( scene2 );
