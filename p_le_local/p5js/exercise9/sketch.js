@@ -3,6 +3,9 @@ var img1,img2,img3;
 // var duration;
 // var  slideWidth = 500;
 
+//PLAY LIB //
+var gren;
+
 function preload() {
 
   snd1 = loadSound("sounds/crack.mp3");
@@ -16,6 +19,15 @@ function preload() {
   img3 = loadImage("img/map1.jpg");
   img4 = loadImage("img/map2.jpg");
   img5 = loadImage("img/map3.png");
+
+  //PLAY LIB //
+  //create an animation from a sequence of numbered images
+  //pass the first and the last file name and it will try to find the ones in between
+  gren = loadAnimation('img/char.png', 'img/char1.png');
+
+  //create an animation listing all the images files
+  // asterisk = loadAnimation('assets/asterisk.png', 'assets/triangle.png', 'assets/square.png', 'assets/cloud.png', 'assets/star.png', 'assets/mess.png', 'assets/monster.png');
+
 }
 
 // global manager object
