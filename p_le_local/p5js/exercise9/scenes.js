@@ -1,12 +1,7 @@
-var gren;
 
 let loy= 0;
 
 function intro()  {
-
-  function preload() {
-    gren = loadAnimation('img/char1.png', 'img/char2.png');
-  }
 
 
   this.setup = function() {
@@ -53,7 +48,6 @@ function intro()  {
     text("Scene 1 works...", 0, 100);
     text("Click to Continue", 0, 150);
 
-    animation(gren, 300, 100);
 
 
     if (loy > 255) {
