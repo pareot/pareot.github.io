@@ -1,9 +1,9 @@
-var snd1,snd2,snd3;
-var img1,img2,img3;
+var snd1,snd2,snd3, snd4, snd5;
+var img1,img2,img3, img4, img5, img6, img7;
 // var duration;
 // var  slideWidth = 500;
 
-// var gren;
+
 
 function preload() {
 
@@ -18,10 +18,15 @@ function preload() {
   img3 = loadImage("img/map1.jpg");
   img4 = loadImage("img/map2.jpg");
   img5 = loadImage("img/map3.png");
+  img6 = loadImage("img/layout UI.png");
+  img7 = loadImage("img/help UI.png");
 
-  // gren = loadAnimation('img/char.png', 'img/char1.png')
+
 
 }
+
+
+
 
 // global manager object
 var mgr;
@@ -38,30 +43,40 @@ function setup() {
   mgr.addScene (scene5);
   mgr.showNextScene();
 
+
 }
+
+
+
 
 function draw() {
   // pass the current draw function into the SceneManager
   mgr.draw();
+
+
+
 }
 
-function mousePressed()
-{
-  // pass the mousePressed message into the SceneManager
-  mgr.mousePressed();
-}
 
-function mouseMoved()
-{
-  // pass the mouseMoved message into the SceneManager
-  mgr.handleEvent("mouseDragged");
-}
 
-function mouseDragged()
-{
-  // pass the mouseMoved message into the SceneManager
-  mgr.handleEvent("mouseDragged");
-}
+
+// function mousePressed()
+// {
+//   // pass the mousePressed message into the SceneManager
+//   mgr.mousePressed();
+// }
+//
+// function mouseMoved()
+// {
+//   // pass the mouseMoved message into the SceneManager
+//   mgr.handleEvent("mouseDragged");
+// }
+//
+// function mouseDragged()
+// {
+//   // pass the mouseMoved message into the SceneManager
+//   mgr.handleEvent("mouseDragged");
+// }
 
 function keyPressed()
 {
@@ -83,8 +98,14 @@ function keyPressed()
     case '5':
     mgr.showScene( scene5 );
     break;
+    case 'h':
+    mgr.showScene( scene5 );
+    break;
   }
 
   // ... then dispatch via the SceneManager.
   mgr.keyPressed();
+
+
+
 }

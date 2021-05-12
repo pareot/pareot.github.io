@@ -1,6 +1,7 @@
 
 let loy= 0;
 
+
 function intro()  {
 
 
@@ -8,7 +9,6 @@ function intro()  {
     console.log("We are at setup for scene1");
     // do all stuff you want to initialize things,
     // as this it need to be called only once.
-    background("blue");
     textAlign(CENTER);
     textSize(29);
   }
@@ -20,7 +20,7 @@ function intro()  {
     // textX = 10;
     // textY = 0;
     loy = 100;
-    background("red");
+    background("white");
 
     if (snd1.isPlaying()) {
       // .isPlaying() returns a boolean
@@ -35,8 +35,19 @@ function intro()  {
 
   this.draw = function()
   {
-    background(0,0,255-loy);
-    image(img1,0,0,width,height);
+    image(img6,0,0,width,height);
+
+    //UI layout
+    fill(39, 178, 255);
+    // rect(0, height/4*3, width, height/4);
+
+
+
+    // gren.attraction(0.2, mouseX, mouseY);
+    // gren.maxSpeed = 5;
+    //draw the sprite
+    drawSprites();
+
 
     textAlign(CENTER);
     textSize(29);
@@ -383,8 +394,8 @@ function scene5() {
   }
 
   this.draw = function() {
-    background(0,0,255-loy);
-    image(img5,0,0,width,height);
+    imageMode(CENTER);
+    image(img7,width/2,height/2,width,height);
 
     textAlign(CENTER);
     textSize(40);
@@ -393,16 +404,16 @@ function scene5() {
 
     push();
     //
-    translate(width/2,height/2);
+    translate(width/2,loy*3);
     fill(100, 255, 250);
     text("Scene 5 works...", 0, 100);
     text("Click to Continue", 0, 150);
-    // if (loy > 255) {
-    //   loy = 0;
-    // } else {
-    //   loy++;
-    // }
-    //
+    if (loy > 255) {
+      loy = 0;
+    } else {
+      loy++;
+    }
+
     pop();
   }
 
