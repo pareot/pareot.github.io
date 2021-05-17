@@ -50,6 +50,11 @@ function setup() {
   mgr.showNextScene();
 
 
+  //setup sprites
+  gren = createSprite(200, 200);
+  gren.addAnimation('normal', 'img/char1.png');
+
+
 }
 
 
