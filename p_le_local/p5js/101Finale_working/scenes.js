@@ -362,12 +362,12 @@ function scene4() {
 
 ////////////////////////////// 5 /////////////////
 
-function scene5() {
+function help() {
 
   let loy= 255;
 
   this.setup = function()  {
-    console.log("We are at setup for scene5");
+    console.log("We are at setup for help UI");
 
   }
 

@@ -3,6 +3,8 @@ var img1,img2,img3, img4, img5, img6, img7;
 // var duration;
 // var  slideWidth = 500;
 
+var lastS;
+
 
 
 function preload() {
@@ -40,7 +42,7 @@ function setup() {
   mgr.addScene (scene2);
   mgr.addScene (scene3);
   mgr.addScene (scene4);
-  mgr.addScene (scene5);
+  mgr.addScene (help);
   mgr.showNextScene();
 
 
@@ -95,11 +97,8 @@ function keyPressed()
     case '4':
     mgr.showScene( scene4 );
     break;
-    case '5':
-    mgr.showScene( scene5 );
-    break;
     case 'h':
-    mgr.showScene( scene5 );
+    mgr.showScene( help );
     break;
   }
 
