@@ -5,7 +5,7 @@ var img1,img2,img3, img4, img5, img6, img7;
 
 var lastS;
 
-
+var ghost;
 
 function preload() {
 

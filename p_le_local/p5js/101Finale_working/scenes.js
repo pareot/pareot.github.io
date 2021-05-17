@@ -6,7 +6,7 @@ function intro()  {
 
 
   this.setup = function() {
-    console.log("We are at setup for scene1");
+    console.log("We are at setup for intro");
     // do all stuff you want to initialize things,
     // as this it need to be called only once.
     textAlign(CENTER);
@@ -16,7 +16,7 @@ function intro()  {
   // enter() will be called each time SceneManager switches
   // to this scene
   this.enter = function()  {
-    console.log("We are at entering scene1");
+    console.log("We are at entering intro");
     // textX = 10;
     // textY = 0;
     loy = 100;
@@ -30,6 +30,10 @@ function intro()  {
       snd1.play();
       //background(0, 255, 0);
     }
+
+    lastS = intro;
+
+
   }
 
 
@@ -57,7 +61,6 @@ function intro()  {
     translate(width/2,loy*3);
     fill(100, 255, 250);
     text("Scene 1 works...", 0, 100);
-    text("Click to Continue", 0, 150);
 
 
 
@@ -69,12 +72,9 @@ function intro()  {
     pop();
   }
 
+  //moving to the next scene
 
-  this.mousePressed = function()
-  {
 
-    this.sceneManager.showScene(scene2);
-  }
 }
 
 
@@ -118,54 +118,50 @@ function scene2()  {
       snd2.play();
       //background(0, 255, 0);
     }
+
+    lastS = scene2;
+
+
   }
 
   this.draw = function()
   {
-    background(0);
-    image(img2,0,0,width,height);
+    image(img6,0,0,width,height);
 
-    background(0,0,255-loy);
-    image(img2,0,0,width,height);
+    //UI layout
+    fill(39, 178, 255);
+    // rect(0, height/4*3, width, height/4);
+
+
+
+    // gren.attraction(0.2, mouseX, mouseY);
+    // gren.maxSpeed = 5;
+    //draw the sprite
+    drawSprites();
+
 
     textAlign(CENTER);
     textSize(29);
-    // fill(200,0,0);
 
     push();
     //
     translate(width/2,loy*3);
     fill(100, 255, 250);
     text("Scene 2 works...", 0, 100);
-    text("Click to Continue", 0, 150);
-    // ellipse(0,0,30,30);
+
+
+
     if (loy < 0) {
       loy = 255;
     } else {
       loy--;
     }
-    //
     pop();
-
-    octo1.update();
-    octo1.display();
-    octo2.update();
-    octo2.display();
-  }
-
-  this.mouseDragged = function() {
-    console.log("mouseDragged");
-    octo1.moveupdate(mouseX,mouseY-40);
-    octo2.moveupdate(650,200);
   }
 
   //moving to next scene
-  this.mousePressed = function()
-  {
 
-    //console.log("exit");
-    this.sceneManager.showNextScene();
-  }
+
 }
 
 
@@ -211,41 +207,51 @@ function scene3() {
       snd3.play();
       //background(0, 255, 0);
     }
+
+    lastS = scene3;
+
+
   }
 
-  this.draw = function() {
-    background(0,0,255-loy);
-    image(img3,0,0,width,height);
+  this.draw = function()
+  {
+    image(img6,0,0,width,height);
+
+    //UI layout
+    fill(39, 178, 255);
+    // rect(0, height/4*3, width, height/4);
+
+
+
+    // gren.attraction(0.2, mouseX, mouseY);
+    // gren.maxSpeed = 5;
+    //draw the sprite
+    drawSprites();
+
 
     textAlign(CENTER);
     textSize(29);
-    // fill(200,0,0);
-
 
     push();
     //
     translate(width/2,loy*3);
     fill(100, 255, 250);
     text("Scene 3 works...", 0, 100);
-    text("Click to Continue", 0, 150);
-    // ellipse(0,0,30,30);
+
+
+
     if (loy > 255) {
       loy = 0;
     } else {
       loy++;
     }
-    //
     pop();
   }
 
 
   //moving to next scene
-  this.mousePressed = function()
-  {
 
-    //console.log("exit");
-    this.sceneManager.showNextScene();
-  }
+
 }
 
 
@@ -299,41 +305,50 @@ function scene4() {
       snd4.play();
       //background(0, 255, 0);
     }
+
+    lastS = scene4;
+
+
   }
 
-  this.draw = function() {
-    background(0,0,255-loy);
-    image(img4,0,0,width,height);
+  this.draw = function()
+  {
+    image(img6,0,0,width,height);
+
+    //UI layout
+    fill(39, 178, 255);
+    // rect(0, height/4*3, width, height/4);
+
+
+
+    // gren.attraction(0.2, mouseX, mouseY);
+    // gren.maxSpeed = 5;
+    //draw the sprite
+    drawSprites();
+
 
     textAlign(CENTER);
     textSize(29);
-    // fill(200,0,0);
-
 
     push();
     //
     translate(width/2,loy*3);
     fill(100, 255, 250);
     text("Scene 4 works...", 0, 100);
-    text("Click to Continue", 0, 150);
-    // ellipse(0,0,30,30);
+
+
+
     if (loy < 0) {
       loy = 255;
     } else {
       loy--;
     }
-    //
     pop();
   }
 
 
   //moving to next scene
-  this.mousePressed = function()
-  {
 
-    //console.log("exit");
-    this.sceneManager.showNextScene();
-  }
 
 }
 
@@ -406,8 +421,7 @@ function help() {
     //
     translate(width/2,loy*3);
     fill(100, 255, 250);
-    text("Scene 5 works...", 0, 100);
-    text("Click to Continue", 0, 150);
+    text("Help UI works...", 0, 100);
     if (loy > 255) {
       loy = 0;
     } else {
@@ -419,11 +433,6 @@ function help() {
 
 
   //moving to next scene
-  this.mousePressed = function()
-  {
 
-    //console.log("exit");
-    this.sceneManager.showNextScene();
-  }
 
 }
