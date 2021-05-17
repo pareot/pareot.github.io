@@ -43,7 +43,6 @@ function intro()  {
 
     //UI layout
     fill(39, 178, 255);
-    // rect(0, height/4*3, width, height/4);
 
 
 
@@ -100,15 +99,14 @@ function scene2()  {
   this.setup = function() {
     background(0);
     console.log("We are at setup for scene2");
-    octo1 = new Octopi(400,600,color(255,0,0),.40);
-    octo2 = new Octopi(650,200,color(0,0,0),.10);
+
   }
 
   this.enter = function()
   {
     snd1.pause();
     snd3.pause();
-    console.log("We are at  scene2 (again?)");
+    console.log("We are at  scene2");
     //  snd2.loop();
 
     if (snd1.isPlaying()) {
@@ -128,7 +126,6 @@ function scene2()  {
   this.draw = function()
   {
     image(img6,0,0,width,height);
-    image(img8,0,height -height/2,width,height/2);
     image(img9, width/2, height/3,100, 100);
 
 
@@ -220,8 +217,7 @@ function scene3() {
   this.draw = function()
   {
     image(img6,0,0,width,height);
-    image(img8,0,height -height/2,width,height/2);
-    image(img10, width/2, height/3 -50,150, 200);
+    image(img10, width/2, height/3,100, 100);
 
     //UI layout
     fill(39, 178, 255);
@@ -320,8 +316,7 @@ function scene4() {
   this.draw = function()
   {
     image(img6,0,0,width,height);
-    image(img8,0,height -height/2,width,height/2);
-    image(img11, width/2, height/3 -50,150, 400);
+    image(img11, width/2, height/3 -100,100, 200);
 
     //UI layout
     fill(39, 178, 255);
