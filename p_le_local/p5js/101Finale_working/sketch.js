@@ -1,5 +1,5 @@
 var snd1,snd2,snd3, snd4, snd5;
-var img1,img2,img3, img4, img5, img6, img7;
+var img1,img2,img3, img4, img5, img6, img7, img8, img9, img10, img11;
 // var duration;
 // var  slideWidth = 500;
 
@@ -22,6 +22,10 @@ function preload() {
   img5 = loadImage("img/map3.png");
   img6 = loadImage("img/layout UI.png");
   img7 = loadImage("img/help UI.png");
+  img8 = loadImage("img/card holder.png");
+  img9 = loadImage("img/seed.png");
+  img10 = loadImage("img/seed2.png");
+  img11 = loadImage("img/seed3.png");
 
 
 
@@ -66,7 +70,7 @@ function draw() {
 // {
 //   // pass the mousePressed message into the SceneManager
 //   mgr.mousePressed();
-// }
+// }1
 //
 // function mouseMoved()
 // {

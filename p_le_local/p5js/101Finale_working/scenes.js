@@ -128,10 +128,9 @@ function scene2()  {
   this.draw = function()
   {
     image(img6,0,0,width,height);
+    image(img8,0,height -height/2,width,height/2);
+    image(img9, width/2, height/3,100, 100);
 
-    rectMode(CENTER);
-    fill(200, 200, 255);
-    rect(width/2, height/4*3, width, height/4 +50);
 
     //UI layout
     fill(39, 178, 255);
@@ -221,6 +220,8 @@ function scene3() {
   this.draw = function()
   {
     image(img6,0,0,width,height);
+    image(img8,0,height -height/2,width,height/2);
+    image(img10, width/2, height/3 -50,150, 200);
 
     //UI layout
     fill(39, 178, 255);
@@ -319,6 +320,8 @@ function scene4() {
   this.draw = function()
   {
     image(img6,0,0,width,height);
+    image(img8,0,height -height/2,width,height/2);
+    image(img11, width/2, height/3 -50,150, 400);
 
     //UI layout
     fill(39, 178, 255);
