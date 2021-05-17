@@ -56,6 +56,7 @@ function intro()  {
     textAlign(CENTER);
     textSize(29);
 
+
     push();
     //
     translate(width/2,loy*3);
@@ -127,6 +128,10 @@ function scene2()  {
   this.draw = function()
   {
     image(img6,0,0,width,height);
+
+    rectMode(CENTER);
+    fill(200, 200, 255);
+    rect(width/2, height/4*3, width, height/4 +50);
 
     //UI layout
     fill(39, 178, 255);
