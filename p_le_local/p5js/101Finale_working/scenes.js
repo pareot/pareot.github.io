@@ -45,6 +45,9 @@ function intro()  {
     //UI layout
     fill(39, 178, 255);
 
+    gren.position.x = -100;
+    gren.position.y = -100;
+
 
 
     // gren.attraction(0.2, mouseX, mouseY);
@@ -134,9 +137,14 @@ function scene2()  {
     fill(39, 178, 255);
     // rect(0, height/4*3, width, height/4);
 
-    gren = createSprite(200, 200);
-    gren.addAnimation('normal', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char2.png', 'img/char2.png', 'img/char2.png', 'img/char2.png');
-    gren.scale = 0.3;
+    //help button
+    gren.position.x = width -100;
+    gren.position.y = height -100;
+
+
+    //spawn random water
+    w1.posion.x = width -rdW;
+    w1.posion.y = height -rdH;
 
 
 
