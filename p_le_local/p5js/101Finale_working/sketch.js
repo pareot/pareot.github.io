@@ -9,8 +9,8 @@ var gren;
 
 var w1, w2, w3, w4, w5;
 
-let rdw;
-let rdH;
+let rdw, rdH;
+let wCount =0;
 
 function preload() {
 
@@ -64,6 +64,8 @@ function setup() {
   w1 = createSprite(-100, -100);
   w1.addAnimation('normal', 'img/water.png');
   w1.scale = 0.1;
+  w1.mouseACtive = true;
+
 
   w2 = createSprite(-100, -100);
   w2.addAnimation('normal', 'img/water.png');
@@ -90,8 +92,8 @@ function draw() {
   // pass the current draw function into the SceneManager
   mgr.draw();
 
-  rdW = random(0, width);
-  rdH = random(0, height);
+  // rdW = random(0, width);
+  // rdH = random(0, height);
 
 
 
