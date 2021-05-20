@@ -1,5 +1,6 @@
 
 let loy= 0;
+let count = 0;
 
 
 function intro()  {
@@ -132,6 +133,10 @@ function scene2()  {
     //UI layout
     fill(39, 178, 255);
     // rect(0, height/4*3, width, height/4);
+
+    gren = createSprite(200, 200);
+    gren.addAnimation('normal', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char2.png', 'img/char2.png', 'img/char2.png', 'img/char2.png');
+    gren.scale = 0.3;
 
 
 

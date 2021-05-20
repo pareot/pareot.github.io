@@ -51,8 +51,9 @@ function setup() {
 
 
   //setup sprites
-  gren = createSprite(200, 200);
-  gren.addAnimation('normal', 'img/char1.png');
+  gren = createSprite(width -70, 70);
+  gren.addAnimation('normal', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char2.png', 'img/char2.png', 'img/char2.png', 'img/char2.png');
+  gren.scale = 0.3;
 
 
 }
