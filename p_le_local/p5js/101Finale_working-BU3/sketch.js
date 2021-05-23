@@ -1,15 +1,19 @@
 var snd1,snd2,snd3, snd4, snd5;
-var img1,img2,img3, img4, img5, img6, img7, img8, img9, img10, img11;
+var img1,img2,img3, img4, img5, img6, img7, img8, img9, img10, img11, img12;
 // var duration;
 // var  slideWidth = 500;
 
 var lastS;
 
-var gren, bean;
+var gren, bean, rat, sprout;
 
 var w1, w2, w3, w4, w5;
+var w1a, w2a, w3a, w4a, w5a;
+var f1, f2, f3, f4, f5;
+
 
 let wCount =0;
+let wCount2 =0;
 let fCount =0;
 
 var draggedSprite;
@@ -33,6 +37,7 @@ function preload() {
   img9 = loadImage("img/seed.png");
   img10 = loadImage("img/seed2.png");
   img11 = loadImage("img/seed3.png");
+  img12 = loadImage("img/help UI2.png");
 
 
 
@@ -58,6 +63,8 @@ function setup() {
 
 
   //setup sprites
+
+  //gren
   gren = createSprite(-100, -100);
   gren.addAnimation('normal', 'img/char1.png');
   gren.addAnimation('dead', 'img/char2.png');
@@ -68,18 +75,30 @@ function setup() {
   }
 
 
+  //bean
   bean = createSprite(-300, -300);
   bean.addAnimation('seed', 'img/beanA.png');
   bean.addAnimation('sprouting', 'img/beanB.png');
   bean.addAnimation('beansprout', 'img/beanC.png');
   bean.scale = 0.15;
 
+  sprout = createSprite(-300, -300);
+  sprout.addAnimation('normal', 'img/seed2.png');
+  sprout.scale = 0.15;
 
+  // //rat
+  // rat = createSprite(-100, -100);
+  // rat.addAnimation('normal', 'img/mouse1.png', 'img/mouse2.png');
+  // rat.scale = 0.3;
+
+
+  //watering can
   wCan = createSprite(-300, -300);
   wCan.addAnimation('normal', 'img/watering can.png');
   wCan.scale = 0.1;
 
 
+  //fertilizer
   fer = createSprite(-300, -300);
   fer.addAnimation('normal', 'img/fertilizer.png');
   fer.scale = 0.1;
@@ -96,25 +115,78 @@ function setup() {
   w2.scale = 0.1;
   w2.maxSpeed = 5;
 
-  w3 = createSprite(-100, -100);
+  w3 = createSprite(width +100, -100);
   w3.addAnimation('normal', 'img/water.png');
   w3.scale = 0.1;
   w3.maxSpeed = 5;
 
-  w4 = createSprite(-100, -100);
+  w4 = createSprite(width +100, height +100);
   w4.addAnimation('normal', 'img/water.png');
   w4.scale = 0.1;
   w4.maxSpeed = 5;
 
-  w5 = createSprite(-100, -100);
+  w5 = createSprite(width +100, height +100);
   w5.addAnimation('normal', 'img/water.png');
   w5.scale = 0.1;
   w5.maxSpeed = 5;
 
+  //water 2
+  w1a = createSprite(-100, -100);
+  w1a.addAnimation('normal', 'img/water.png');
+  w1a.scale = 0.1;
+  w1a.maxSpeed = 5;
 
-  textSize(32);
-  fill(0,0,0);
-  text('Water collect:' + 'wCount', 100, 100);
+  w2a = createSprite(-100, -100);
+  w2a.addAnimation('normal', 'img/water.png');
+  w2a.scale = 0.1;
+  w2a.maxSpeed = 5;
+
+  w3a = createSprite(width +100, -100);
+  w3a.addAnimation('normal', 'img/water.png');
+  w3a.scale = 0.1;
+  w3a.maxSpeed = 5;
+
+  w4a = createSprite(width +100, height +100);
+  w4a.addAnimation('normal', 'img/water.png');
+  w4a.scale = 0.1;
+  w4a.maxSpeed = 5;
+
+  w5a = createSprite(width +100, height +100);
+  w5a.addAnimation('normal', 'img/water.png');
+  w5a.scale = 0.1;
+  w5a.maxSpeed = 5;
+
+  //set up rat
+  f1 = createSprite(-100, -100);
+  f1.addAnimation('normal', 'img/mouse1.png', 'img/mouse2.png');
+  f1.scale = 0.3;
+  f1.maxSpeed = 1.5;
+
+  f2 = createSprite(-100, -100);
+  f2.addAnimation('normal', 'img/mouse1.png', 'img/mouse2.png');
+  f2.scale = 0.3;
+  f2.maxSpeed = 3;
+
+  f3 = createSprite(width +100, height +100);
+  f3.addAnimation('normal', 'img/mouse1.png', 'img/mouse2.png');
+  f3.scale = 0.3;
+  f3.mirrorX(-1);
+  f3.maxSpeed = 2;
+
+  f4 = createSprite(width +100, height +100);
+  f4.addAnimation('normal', 'img/mouse1.png', 'img/mouse2.png');
+  f4.scale = 0.3;
+  f4.mirrorX(-1);
+  f4.maxSpeed = 3;
+
+  f5 = createSprite(width/2, -100);
+  f5.addAnimation('normal', 'img/mouse1.png', 'img/mouse2.png');
+  f5.scale = 0.3;
+  f5.maxSpeed = 5;
+
+
+
+
 
 
 

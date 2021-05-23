@@ -1,4 +1,3 @@
-
 let loy= 0;
 let count = 0;
 
@@ -159,6 +158,7 @@ function scene2()  {
     }
 
 
+    //score
     textSize(32);
     fill(0,0,0);
     text('Water collect:' + wCount, 10, 30);
@@ -172,8 +172,6 @@ function scene2()  {
       draggedSprite.position.y = mouseY;
     }
 
-    textAlign(CENTER);
-    textSize(29);
 
     push();
     //
@@ -223,6 +221,9 @@ function scene3() {
 
   this.setup = function()  {
     console.log("We are at setup for scene3");
+
+    sprout.position.x = width/2 +50;
+    sprout.position.y = height/2 -80;
   }
 
   this.enter = function()  {
@@ -250,15 +251,103 @@ function scene3() {
   this.draw = function()
   {
     image(img6,0,0,width,height);
-    image(img10, width/2, height/3,100, 100);
+    // image(img10, width/2, height/3,100, 100);
+
 
     //UI layout
     fill(39, 178, 255);
 
     drawSprites();
 
-    textAlign(CENTER);
-    textSize(29);
+
+    //spawn rat
+    f1.attractionPoint(0.2, width/2, height/2);
+    if (f1.overlap(sprout)) {
+      mgr.showScene(intro);
+    }
+    f1.onMousePressed = function() {
+      fCount +=1;
+      this.remove();
+    }
+
+
+    f2.attractionPoint(0.2, width/2, height/2);
+    if (f2.overlap(sprout)) {
+      mgr.showScene(intro);
+    }
+    f2.onMousePressed = function() {
+      fCount +=1;
+      this.remove();
+    }
+
+
+    f3.attractionPoint(0.2, width/2, height/2);
+    if (f3.overlap(sprout)) {
+      mgr.showScene(intro);
+    }
+    f3.onMousePressed = function() {
+      fCount +=1;
+      this.remove();
+    }
+
+
+    f4.attractionPoint(0.2, width/2, height/2);
+    if (f4.overlap(sprout)) {
+      mgr.showScene(intro);
+    }
+    f4.onMousePressed = function() {
+      fCount +=1;
+      this.remove();
+    }
+
+
+    f5.attractionPoint(0.2, width/2, height/2);
+    if (f5.overlap(sprout)) {
+      mgr.showScene(intro);
+    }
+    f5.onMousePressed = function() {
+      fCount +=1;
+      this.remove();
+    }
+
+
+
+    //spawn water particles 2nd
+    w1a.attractionPoint(0.2, random(0, 100), random(200, 250));
+    w1a.onMousePressed = function() {
+      wCount2 +=1;
+      this.visible = false;
+    }
+    w2a.attractionPoint(0.3, random(600, 900), random(100, 350));
+    w2a.onMousePressed = function() {
+      wCount2 +=1;
+      this.visible = false;
+    }
+    w3a.attractionPoint(0.2, random(200, 700), random(0, 50));
+    w3a.onMousePressed = function() {
+      wCount2 +=1;
+      this.visible = false;
+    }
+    w4a.attractionPoint(0.5, random(600, 650), random(50, 750));
+    w4a.onMousePressed = function() {
+      wCount2 +=1;
+      this.visible = false;
+    }
+    w5a.attractionPoint(0.1, mouseX, mouseY);
+    w5a.onMousePressed = function() {
+      wCount2 +=1;
+      this.visible = false;
+    }
+
+
+    //score
+    textSize(32);
+    fill(0,0,0);
+    text('Water collect:' + wCount2, 10, 30);
+    text('Rat deflected:' + fCount, 10, 60);
+
+
+
 
     push();
     //
@@ -274,6 +363,13 @@ function scene3() {
     pop();
 
 
+    //move to victory scene
+    if (wCount2 == 5 && fCount == 5) {
+      mgr.showScene(scene4);
+    }
+
+
+    //move to help UI
     gren.onMousePressed = function() {
       this.changeAnimation("dead");
       mgr.showScene(help);
@@ -313,6 +409,9 @@ function scene4() {
 
   this.setup = function()  {
     console.log("We are at setup for scene4");
+
+    sprout.position.x = -200;
+    sprout.position.y = -200;
   }
 
   this.enter = function()  {
@@ -356,7 +455,7 @@ function scene4() {
     //
     translate(width/2,loy*3);
     fill(100, 255, 250);
-    text("Scene 4 works...", 0, 100);
+    text("You win...", 0, 100);
 
     if (loy < 0) {
       loy = 255;
@@ -441,7 +540,7 @@ function help() {
 
   this.draw = function() {
     imageMode(CENTER);
-    image(img7,width/2,height/2,width,height);
+    image(img12,width/2,height/2,width,height);
 
     textAlign(CENTER);
     textSize(40);
