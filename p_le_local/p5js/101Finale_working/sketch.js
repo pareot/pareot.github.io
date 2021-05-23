@@ -64,7 +64,7 @@ function setup() {
   w1 = createSprite(-100, -100);
   w1.addAnimation('normal', 'img/water.png');
   w1.scale = 0.1;
-  w1.mouseACtive = true;
+  // w1.mouseACtive = true;
 
 
   w2 = createSprite(-100, -100);

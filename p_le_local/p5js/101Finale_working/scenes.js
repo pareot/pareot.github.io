@@ -191,11 +191,11 @@ function scene2()  {
     pop();
   }
 
-  w1.onMousePressed = function() {
-    mgr.showScene( scene3);
-
-
-  }
+  // w1.onMousePressed = function() {
+  //   mgr.showScene( scene3);
+  //
+  //
+  // }
 
   //moving to next scene
 
