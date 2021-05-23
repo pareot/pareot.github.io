@@ -13,8 +13,14 @@ function intro()  {
     textSize(29);
 
 
-    gren.position.x = width -100;
-    gren.position.y = height -100;
+    gren.position.x = width/2;
+    gren.position.y = height/2 -100;
+
+    pButton.position.x = width/2;
+    pButton.position.y = height/2 +100;
+
+    pButton.visible = true;
+
   }
 
   // enter() will be called each time SceneManager switches
@@ -40,8 +46,7 @@ function intro()  {
   }
 
 
-  this.draw = function()
-  {
+  this.draw = function()  {
     image(img6,0,0,width,height);
 
     //UI layout
@@ -72,10 +77,18 @@ function intro()  {
     gren.onMouseReleased = function() {
       this.changeAnimation("normal");
     }
-  }
 
-  //moving to the next scene
+    //moving to scene2
+    pButton.onMousePressed = function() {
+      this.changeAnimation("hover");
+    }
+    pButton.onMouseReleased = function() {
+      mgr.showScene(scene2)
+      this.visible = false;
+    }
+  }
 }
+
 
 
 
@@ -102,6 +115,8 @@ function scene2()  {
 
     gren.position.x = width -100;
     gren.position.y = height -100;
+
+    pButton.visible = false;
   }
 
   this.enter = function()
@@ -224,6 +239,8 @@ function scene3() {
 
     sprout.position.x = width/2 +50;
     sprout.position.y = height/2 -80;
+
+    pButton.visible = false;
   }
 
   this.enter = function()  {
@@ -412,6 +429,8 @@ function scene4() {
 
     sprout.position.x = -200;
     sprout.position.y = -200;
+
+    pButton.visible = false;
   }
 
   this.enter = function()  {
@@ -506,6 +525,8 @@ function gameOver() {
 
     sprout.position.x = -200;
     sprout.position.y = -200;
+
+    pButton.visible = false;
   }
 
   this.enter = function()  {
@@ -609,6 +630,8 @@ function help() {
     bean.visible = 0;
     wCan.visible = 0;
     fer.visible = 0;
+
+    pButton.visible = false;
   }
 
   this.enter = function()  {
