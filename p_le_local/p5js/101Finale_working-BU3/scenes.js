@@ -263,7 +263,7 @@ function scene3() {
     //spawn rat
     f1.attractionPoint(0.2, width/2, height/2);
     if (f1.overlap(sprout)) {
-      mgr.showScene(intro);
+      mgr.showScene(gameOver);
     }
     f1.onMousePressed = function() {
       fCount +=1;
@@ -273,7 +273,7 @@ function scene3() {
 
     f2.attractionPoint(0.2, width/2, height/2);
     if (f2.overlap(sprout)) {
-      mgr.showScene(intro);
+      mgr.showScene(gameOver);
     }
     f2.onMousePressed = function() {
       fCount +=1;
@@ -283,7 +283,7 @@ function scene3() {
 
     f3.attractionPoint(0.2, width/2, height/2);
     if (f3.overlap(sprout)) {
-      mgr.showScene(intro);
+      mgr.showScene(gameOver);
     }
     f3.onMousePressed = function() {
       fCount +=1;
@@ -293,7 +293,7 @@ function scene3() {
 
     f4.attractionPoint(0.2, width/2, height/2);
     if (f4.overlap(sprout)) {
-      mgr.showScene(intro);
+      mgr.showScene(gameOver);
     }
     f4.onMousePressed = function() {
       fCount +=1;
@@ -303,7 +303,7 @@ function scene3() {
 
     f5.attractionPoint(0.2, width/2, height/2);
     if (f5.overlap(sprout)) {
-      mgr.showScene(intro);
+      mgr.showScene(gameOver);
     }
     f5.onMousePressed = function() {
       fCount +=1;
@@ -449,13 +449,106 @@ function scene4() {
     drawSprites();
 
     textAlign(CENTER);
-    textSize(29);
+    textSize(64);
 
     push();
     //
     translate(width/2,loy*3);
     fill(100, 255, 250);
     text("You win...", 0, 100);
+
+    if (loy < 0) {
+      loy = 255;
+    } else {
+      loy--;
+    }
+    pop();
+
+
+    gren.onMousePressed = function() {
+      this.changeAnimation("dead");
+      mgr.showScene(help);
+    }
+    gren.onMouseReleased = function() {
+      this.changeAnimation("normal");
+    }
+  }
+
+
+  //moving to next scene
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////// lost scene /////////////////
+
+function gameOver() {
+
+  let loy= 255;
+
+  this.setup = function()  {
+    console.log("We are at setup for gameOver");
+
+    sprout.position.x = -200;
+    sprout.position.y = -200;
+  }
+
+  this.enter = function()  {
+    snd1.pause();
+    snd2.pause();
+    snd3.pause();
+
+    let loy= 255;
+    console.log("We are entering gameOver scene");
+
+    //  snd2.loop();
+    if (snd3.isPlaying()) {
+      // .isPlaying() returns a boolean
+      snd3.pause(); // .play() will resume from .pause() position
+      //  background(255, 0, 0);
+    } else {
+      snd4.play();
+      //background(0, 255, 0);
+    }
+
+
+    lastS = scene4;
+  }
+
+  this.draw = function()
+  {
+    image(img6,0,0,width,height);
+
+    //UI layout
+    fill(39, 178, 255);
+    // rect(0, height/4*3, width, height/4);
+
+    //draw the sprite
+    drawSprites();
+
+    textAlign(CENTER);
+    textSize(64);
+
+    push();
+    //
+    translate(width/2,loy*3);
+    fill(100, 255, 250);
+    text("You lost...", 0, 100);
 
     if (loy < 0) {
       loy = 255;
