@@ -12,6 +12,7 @@ function intro()  {
     // as this it need to be called only once.
     textAlign(CENTER);
     textSize(29);
+
   }
 
   // enter() will be called each time SceneManager switches
@@ -45,30 +46,11 @@ function intro()  {
     //UI layout
     fill(39, 178, 255);
 
-    gren.position.x = width -100;
-    gren.position.y = height -100;
 
     w1.position.x = -200;
     w1.position.y = -200;
 
-    w2.position.x = -200;
-    w2.position.y = -200;
 
-    w3.position.x = -200;
-    w3.position.y = -200;
-
-    w4.position.x = -200;
-    w4.position.y = -200;
-
-    w5.position.x = -200;
-    w5.position.y = -200;
-
-
-
-
-
-    // gren.attraction(0.2, mouseX, mouseY);
-    // gren.maxSpeed = 5;
     //draw the sprite
     drawSprites();
 
@@ -121,6 +103,39 @@ function scene2()  {
     background(0);
     console.log("We are at setup for scene2");
 
+    gren.position.x = width -100;
+    gren.position.y = height -100;
+
+    //bean mechanic
+    bean.position.x = width/2;
+    bean.position.y = height/2;
+
+    bean.onMousePressed = function() {
+      if (draggedSprite == null) {
+        draggedSprite = this;
+      }
+
+      if(mouseButton === LEFT) {
+        wCan.position.x = mouseX +180;
+        wCan.position.y = mouseY +50;
+      }
+      if(mouseButton === LEFT) {
+        fer.position.x = mouseX +180;
+        fer.position.y = mouseY -100;
+      }
+    };
+    bean.onMouseReleased = function() {
+      if (draggedSprite == this) {2
+        draggedSprite = null;
+      }
+    };
+
+    wCan.onMousePressed = function() {
+      bean.changeAnimation("sprouting");
+    }
+    fer.onMousePressed = function() {
+      bean.changeAnimation("beansprout");
+    }
   }
 
   this.enter = function()
@@ -149,14 +164,17 @@ function scene2()  {
     image(img6,0,0,width,height);
     image(img9, width/2, height/3,100, 100);
 
+    drawSprites();
 
     //UI layout
     fill(39, 178, 255);
-    // rect(0, height/4*3, width, height/4);
 
-    //help button
-    gren.position.x = width -100;
-    gren.position.y = height -100;
+
+    //dragging mechanics on
+    if (draggedSprite != null) {
+      draggedSprite.position.x = mouseX;
+      draggedSprite.position.y = mouseY;
+    }
 
 
     //spawn random water
@@ -165,11 +183,6 @@ function scene2()  {
 
 
 
-
-    // gren.attraction(0.2, mouseX, mouseY);
-    // gren.maxSpeed = 5;
-    //draw the sprite
-    drawSprites();
 
 
     textAlign(CENTER);
@@ -189,17 +202,17 @@ function scene2()  {
       loy--;
     }
     pop();
+
+
+
+    gren.onMousePressed = function() {
+      this.changeAnimation("dead");
+      mgr.showScene(help);
+    }
+    gren.onMouseReleased = function() {
+      this.changeAnimation("normal");
+    }
   }
-
-  // w1.onMousePressed = function() {
-  //   mgr.showScene( scene3);
-  //
-  //
-  // }
-
-  //moving to next scene
-
-
 }
 
 
@@ -427,6 +440,13 @@ function help() {
   this.setup = function()  {
     console.log("We are at setup for help UI");
 
+
+    gren.position.x = width -100;
+    gren.position.y = height -100;
+
+    bean.visible = 0;
+    wCan.visible = 0;
+    fer.visible = 0;
   }
 
   this.enter = function()  {
@@ -472,7 +492,18 @@ function help() {
     }
 
     pop();
+
+    drawSprites();
+
+    gren.onMousePressed = function() {
+      this.changeAnimation("dead");
+      mgr.showScene(lastS);
+    }
+    gren.onMouseReleased = function() {
+      this.changeAnimation("normal");
+    }
   }
+
 
 
   //moving to next scene

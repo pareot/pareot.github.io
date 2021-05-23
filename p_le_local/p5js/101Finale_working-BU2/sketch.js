@@ -5,12 +5,14 @@ var img1,img2,img3, img4, img5, img6, img7, img8, img9, img10, img11;
 
 var lastS;
 
-var gren;
+var gren, bean;
 
 var w1, w2, w3, w4, w5;
 
 let rdw, rdH;
 let wCount =0;
+
+var draggedSprite;
 
 function preload() {
 
@@ -57,8 +59,31 @@ function setup() {
 
   //setup sprites
   gren = createSprite(-100, -100);
-  gren.addAnimation('normal', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char1.png', 'img/char2.png', 'img/char2.png', 'img/char2.png', 'img/char2.png');
+  gren.addAnimation('normal', 'img/char1.png');
+  gren.addAnimation('dead', 'img/char2.png');
   gren.scale = 0.3;
+
+  gren.onMousePressed = function() {
+    this.changeAnimation('dead');
+  }
+
+
+  bean = createSprite(-300, -300);
+  bean.addAnimation('seed', 'img/beanA.png');
+  bean.addAnimation('sprouting', 'img/beanB.png');
+  bean.addAnimation('beansprout', 'img/beanC.png');
+  bean.scale = 0.15;
+
+
+  wCan = createSprite(-300, -300);
+  wCan.addAnimation('normal', 'img/watering can.png');
+  wCan.scale = 0.1;
+
+
+  fer = createSprite(-300, -300);
+  fer.addAnimation('normal', 'img/fertilizer.png');
+  fer.scale = 0.1;
+
 
   //water
   w1 = createSprite(-100, -100);
@@ -72,17 +97,27 @@ function setup() {
   w2.addAnimation('normal', 'img/water.png');
   w2.scale = 0.1;
 
+
   w3 = createSprite(-100, -100);
   w3.addAnimation('normal', 'img/water.png');
   w3.scale = 0.1;
+
 
   w4 = createSprite(-100, -100);
   w4.addAnimation('normal', 'img/water.png');
   w4.scale = 0.1;
 
+
   w5 = createSprite(-100, -100);
   w5.addAnimation('normal', 'img/water.png');
   w5.scale = 0.1;
+  //setup ends
+
+
+
+
+
+
 
 }
 
