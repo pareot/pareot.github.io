@@ -5,7 +5,7 @@ var img1,img2,img3, img4, img5, img6, img7, img8, img9, img10, img11, img12;
 
 var lastS;
 
-var gren, bean, rat, sprout;
+var gren, bean, rat, sprout, pButton;
 
 var w1, w2, w3, w4, w5;
 var w1a, w2a, w3a, w4a, w5a;
@@ -15,7 +15,7 @@ var f1, f2, f3, f4, f5;
 let wCount =0;
 let wCount2 =0;
 let ratCount =0;
-let rCount =0;
+let fCount =0;
 
 var draggedSprite;
 
@@ -186,6 +186,12 @@ function setup() {
   f5.maxSpeed = 5;
 
 
+  pButton = createSprite(-100, -100);
+  pButton.addAnimation('normal', 'img/button_play.png');
+  pButton.addAnimation('hover', 'img/button_play2.png');
+  pButton.scale = 0.3;
+
+
 
 
 
@@ -247,27 +253,28 @@ function draw() {
 //   mgr.handleEvent("mouseDragged");
 // }
 
+//no longer use
 function keyPressed()
 {
   // You can optionaly handle the key press at global level...
-  switch(key)
-  {
-    case '1':
-    mgr.showScene( intro );
-    break;
-    case '2':
-    mgr.showScene( scene2 );
-    break;
-    case '3':
-    mgr.showScene( scene3 );
-    break;
-    case '4':
-    mgr.showScene( scene4 );
-    break;
-    case 'h':
-    mgr.showScene( help );
-    break;
-  }
+  // switch(key)
+  // {
+  //   case '1':
+  //   mgr.showScene( intro );
+  //   break;
+  //   case '2':
+  //   mgr.showScene( scene2 );
+  //   break;
+  //   case '3':
+  //   mgr.showScene( scene3 );
+  //   break;
+  //   case '4':
+  //   mgr.showScene( scene4 );
+  //   break;
+  //   case 'h':
+  //   mgr.showScene( help );
+  //   break;
+  // }
 
   // ... then dispatch via the SceneManager.
   mgr.keyPressed();
