@@ -14,7 +14,8 @@ var f1, f2, f3, f4, f5;
 
 let wCount =0;
 let wCount2 =0;
-let fCount =0;
+let ratCount =0;
+let rCount =0;
 
 var draggedSprite;
 
