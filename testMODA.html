@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Art 103 - 3rd page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!--modal style START-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Image1 modal style */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#myImg:hover {
+    opacity: 0.7;
+}
+
+#myImg2 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#myImg2:hover {
+    opacity: 0.7;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+/* Add Animation */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+.modal-content, #caption2 {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+from {
+-webkit-transform:scale(0)
+}
+to {
+-webkit-transform:scale(1)
+}
+}
+@keyframes zoom {
+from {
+transform:scale(0)
+}
+to {
+transform:scale(1)
+}
+}
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+.modal-content {
+    width: 100%;
+}
+}
+</style>
+<!--modal style END-->
+</head>
+
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;/* background-image: url("GithubPhoto/cover.png"); */
+}
+</style>
+
+<body>
+  <!--nav bar-->
+  <div class="container-fluid bg-dark">
+    <h1 class="display-5" style="color: antiquewhite; text-align:center">Phuc Le</h1>
+    <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+      <ul class="nav">
+        <!-- landing page dropdown -->
+        <div class="dropdown">
+          <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">Home</button>
+          <div class="dropdown-menu"> <a class="dropdown-item" href="DMAport.html">Landing Page</a> </div>
+        </div>
+        <!--Art 101 dropdown-->
+        <div class="dropdown">
+          <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">Art 101</button>
+          <div class="dropdown-menu"> <a class="dropdown-item" href="art101_project1.html">Project 1</a> <a class="dropdown-item" href="art101_project2.html">Project 2</a> <a class="dropdown-item text-white-50 bg-dark" href="#">Next Project</a> </div>
+        </div>
+        <!--Art 103 dropdown-->
+        <div class="dropdown">
+          <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">Art 103</button>
+          <div class="dropdown-menu"> <a class="dropdown-item" href="art103_oblique.html">Oblique Process</a> <a class="dropdown-item" href="art103_reading1.html">Reading 1</a> <a class="dropdown-item" href="art103_modntes.html">Modular N Tessllation</a><a class="dropdown-item text-white-50 bg-dark" href="#">Next Project</a> </div>
+        </div>
+        <!-- portfolio dropdown -->
+        <div class="dropdown">
+          <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">Portfolio</button>
+          <div class="dropdown-menu"> <a class="dropdown-item" href="DMAport.html">DMA Portfolio</a> </div>
+        </div>
+    </ul>
+  </nav>
+  <br>
+  </div>
+  <!--nav bar ended-->
+
+
+<!--Pic goes here-->
+<div class="container-fluid">
+  <div class="row"> <img src="GithubPhoto/avatar_pareot.png" alt ="place_holder_image" class="mx-auto d-block img-fluid" style="height:600px;width:800px;"></div>
+</div>
+<!--Artist Statement goes here-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4 bg-dark"> <br>
+      <h3 style="color: antiquewhite; text-align:center"><b>Artwork's title goes here</b></h3>
+      "<img id="myImg" src="GithubPhoto/cover.png" alt="cover" class="img-thumbnail mx-auto d-block" style="width:100%;max-width:300px">
+      <p style="color: antiquewhite; text-align:center">(Click on image to enlarge)</p>
+    </div>
+    <div class="col-sm-8 bg-dark"> <br>
+      <h3 style="color: antiquewhite; text-align:left">Artist's Statement</h3>
+      <p style="color: white; text-align:left">Lorem ipsum dolor..</p>
+      <p style="color: white; text-align:left">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+</div>
+<!--break line-->
+<br>
+
+<!--The MODAL-->
+<!-- The Modal -->
+<div id="myModal" class="modal"> <span class="close">&times;</span> <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+<!--MODAL END-->
+
+<!--<img id="myImg" src="GithubPhoto/cover.png" alt="cover" style="width:100%;max-width:300px"> -->
+
+<!--Modal SCRIPT START-->
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+<!--Modal SCRIPT END-->
+
+<!-- Modal2 -->
+<!--Artist Statement goes here-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4 bg-dark"> <br>
+      <h3 style="color: antiquewhite; text-align:center"><b>Artwork's title goes here</b></h3>
+      "<img id="myImg2" src="GithubPhoto/art103/tessellation.png" alt="original tes" class="img-thumbnail mx-auto d-block" style="width:100%;max-width:300px">
+      <p style="color: antiquewhite; text-align:center">(Click on image to enlarge)</p>
+    </div>
+    <div class="col-sm-8 bg-dark"> <br>
+      <h3 style="color: antiquewhite; text-align:left">Artist's Statement</h3>
+      <p style="color: white; text-align:left">Lorem ipsum dolor..</p>
+      <p style="color: white; text-align:left">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+</div>
+<!--break line-->
+<br>
+
+<!--The MODAL-->
+<!-- The Modal -->
+<div id="myModal2" class="modal"> <span class="close">&times;</span> <img class="modal-content" id="img02">
+  <div id="caption2"></div>
+</div>
+<!--MODAL END-->
+
+<!--<img id="myImg" src="GithubPhoto/cover.png" alt="cover" style="width:100%;max-width:300px"> -->
+
+<!--Modal SCRIPT START-->
+<script>
+// Get the modal
+var modal2 = document.getElementById("myModal2");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img2 = document.getElementById("myImg2");
+var modalImg2 = document.getElementById("img02");
+var captionText2 = document.getElementById("caption2");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[1];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+<!--Modal SCRIPT END-->
+
+
+</body>
+</html>
